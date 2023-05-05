@@ -1,0 +1,124 @@
+.basicTable {
+  border: unset !important;
+
+  .actions {
+    button {
+      opacity: 0.4;
+      transition: 0.2s ease-out;
+      background: transparent;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .MuiDataGrid-columnHeader,
+  .MuiDataGrid-columnHeaders {
+    height: unset !important;
+    min-height: unset !important;
+    max-height: unset !important;
+    line-height: unset !important;
+  }
+  .MuiDataGrid-columnHeader {
+    padding: 0.4em 20px !important;
+    //font
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: 0.17px;
+    text-transform: capitalize;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  .MuiDataGrid-cell {
+    padding: 0.4em 20px !important;
+
+    //font
+    color: rgba(0, 0, 0, 0.87);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.17px;
+
+    &.mutedData {
+      color: rgba(0, 0, 0, 0.4);
+    }
+  }
+  .MuiDataGrid-withBorderColor {
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.07);
+  }
+}
+.productTable {
+  border: 0 !important;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 15px;
+    gap: 1em 0.5em;
+    padding: 1em 20px 0.5em 20px;
+    align-items: center;
+
+    &._alignStart {
+      justify-content: flex-start;
+    }
+
+    .MuiInputBase-root {
+      flex-grow: 2;
+      max-width: 350px;
+    }
+    .MuiButtonBase-root {
+      flex-grow: 1;
+      min-width: min-content;
+      max-width: 250px;
+      white-space: nowrap;
+    }
+  }
+  &__toolbar {
+    font-size: 15px;
+    padding: 0.5em 20px 1em 20px !important;
+
+    .MuiButton-text {
+      display: flex;
+      align-items: center;
+
+      font-family: $font-secondary;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 1.1;
+      color: #000000;
+
+      .inlineIcon {
+        color: $primary;
+      }
+    }
+  }
+
+  .MuiDataGrid {
+    &-columnHeader {
+      height: unset !important;
+      min-height: unset !important;
+      max-height: unset !important;
+      line-height: unset !important;
+    }
+    &-columnHeaders {
+      border-top: 1px solid rgba(0, 0, 0, 0.07);
+      background: $lightBlue;
+      height: unset !important;
+      min-height: unset !important;
+      max-height: unset !important;
+      line-height: unset !important;
+    }
+    &-row {
+      &:nth-child(even) {
+        background: $lightBlue;
+      }
+    }
+  }
+  .MuiCheckbox-root {
+    padding: 0;
+  }
+}

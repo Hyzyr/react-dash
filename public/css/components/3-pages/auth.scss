@@ -1,0 +1,100 @@
+.auth {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  &__title {
+    margin-bottom: 3em;
+    // font
+    color: rgba($black, 0.87);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.1;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    &-input {
+      .MuiInput-root {
+        justify-content: center;
+        font-size: 22px;
+        gap: 0.5em;
+
+        &:before,
+        &:after {
+          border-width: 2px;
+        }
+
+        input {
+          max-width: 230px;
+          color: rgba(0, 0, 0, 0.87);
+          font-family: $font-secondary;
+          font-style: normal;
+          font-weight: 400;
+          font-size: inherit;
+          line-height: 1;
+        }
+      }
+      .MuiFormHelperText-root {
+        margin-top: 1.5em;
+        color: rgba(0, 0, 0, 0.36);
+
+        //font
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.2em;
+        text-align: center;
+        letter-spacing: 0.15px;
+      }
+    }
+    &-row {
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 12px;
+      gap: 1em;
+
+      label {
+        display: block;
+        width: 100%;
+
+        //font
+        color: rgba(0, 0, 0, 0.6);
+        font-size: inherit;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.2;
+        letter-spacing: 0.15px;
+      }
+      .MuiOutlinedInput-root {
+        flex: 1 0 0;
+
+        input {
+          padding: 5px;
+          //font
+          color: $black;
+          font-family: $font-secondary;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 32px;
+          line-height: 1;
+          text-align: center;
+        }
+      }
+    }
+    &-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

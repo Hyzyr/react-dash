@@ -1,0 +1,81 @@
+.main {
+  .Mui {
+    &TextField-root {
+      width: 100%;
+    }
+    &Badge-badge {
+      transform: translate(20%, -20%);
+      border: 1px solid currentColor;
+      box-shadow: 0px 2px 2px rgba(25, 118, 210, 0.11);
+    }
+    &Button-root {
+      box-shadow: unset;
+
+      //font
+      font-family: $font-secondary;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1;
+      letter-spacing: 0.4px;
+      &.Mui-disabled {
+        color: $gray;
+        background: $gray-2;
+      }
+    }
+    &Checkbox-root {
+      &.MuiCheckbox-colorPrimary {
+        color: rgba(#000, 0.26);
+        transition: 0.2s ease-out;
+
+        & + .MuiFormControlLabel-label {
+          color: rgba(#000, 0.26);
+          transition: 0.2s ease-out;
+        }
+        &.Mui-checked {
+          color: $primary !important;
+          & + .MuiFormControlLabel-label {
+            color: $primary !important;
+          }
+        }
+      }
+    }
+    &FormControlLabel-root {
+      &:hover {
+        .MuiCheckbox-root.MuiCheckbox-colorPrimary {
+          color: rgba($primary, 0.6);
+
+          & + .MuiFormControlLabel-label {
+            color: rgba($primary, 0.6);
+          }
+        }
+      }
+    }
+    &Button-sizeLarge {
+      padding: 1.4em 2em;
+    }
+    &Paper {
+      &-root {
+        border-radius: 15px;
+      }
+      &-elevation1 {
+        box-shadow: 0px 10px 20px rgba(25, 118, 210, 0.05);
+      }
+    }
+
+    &InputBase-root {
+      &.smallSelect {
+        font-size: 16px;
+        .MuiSelect-select {
+          padding: 0.3em 2.5em 0.3em 0.8em;
+        }
+      }
+      &.MuiOutlinedInput-root {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+}
