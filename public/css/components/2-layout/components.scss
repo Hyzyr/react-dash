@@ -22,50 +22,7 @@
 // }
 
 .main {
-  .popupButton {
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    background: $primary;
-    color: $white;
-    padding: 20px;
-    z-index: 1;
 
-    &:after {
-      position: absolute;
-      content: "";
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      background: rgba($color: #000000, $alpha: 0.2);
-      border-radius: inherit;
-      transform: translate(-50%, -50%);
-      opacity: 0;
-      transition: 0.4s ease-in-out;
-      z-index: -1;
-    }
-
-    &:hover {
-      background: mix($primary, $white, 80%);
-      &:after {
-        width: 115%;
-        height: 115%;
-        opacity: 1;
-      }
-    }
-    &-ico {
-      display: flex;
-      font-size: 14px;
-
-      svg {
-        width: 1em;
-        height: 1em;
-      }
-    }
-    &.active {
-    }
-  }
   .regionPrefix {
     display: flex;
     align-items: center;

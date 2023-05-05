@@ -26,8 +26,8 @@ const App = () => {
               path="/manage-shop"
               element={
                 <CenterBox>
-                  <Typography cx={{ padding: "30px" }}>
-                    "manage-shop"
+                  <Typography sx={{ padding: "60px" }} variant="h4">
+                    manage-shop
                   </Typography>
                 </CenterBox>
               }

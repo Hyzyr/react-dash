@@ -1,119 +1,5 @@
 @import "./animate.css";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
-@-webkit-keyframes zoomInCenter {
-  from {
-    opacity: 0;
-    -webkit-transform: translate(-50%, -50%) scale(0.9);
-            transform: translate(-50%, -50%) scale(0.9);
-  }
-  30% {
-    opacity: 1;
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translate(-50%, -50%) scale(1);
-            transform: translate(-50%, -50%) scale(1);
-  }
-}
-@keyframes zoomInCenter {
-  from {
-    opacity: 0;
-    -webkit-transform: translate(-50%, -50%) scale(0.9);
-            transform: translate(-50%, -50%) scale(0.9);
-  }
-  30% {
-    opacity: 1;
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translate(-50%, -50%) scale(1);
-            transform: translate(-50%, -50%) scale(1);
-  }
-}
-@-webkit-keyframes zoomIn {
-  from {
-    opacity: 0;
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-  }
-  30% {
-    opacity: 1;
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-  }
-  30% {
-    opacity: 1;
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-@-webkit-keyframes fadeInUp {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(10%);
-            transform: translateY(10%);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(10%);
-            transform: translateY(10%);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-@-webkit-keyframes sticky {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(-110%);
-            transform: translateY(-110%);
-  }
-  50% {
-    opacity: 1;
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-@keyframes sticky {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(-110%);
-            transform: translateY(-110%);
-  }
-  50% {
-    opacity: 1;
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
 @-webkit-keyframes animInUp {
   from {
     -webkit-transform: translateY(10%) scale(0.98);
@@ -137,13 +23,6 @@
 .animInUp {
   -webkit-animation-name: animInUp;
   animation-name: animInUp;
-}
-
-.zoomInCenter {
-  -webkit-animation-name: zoomInCenter;
-          animation-name: zoomInCenter;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
 }
 
 @font-face {
@@ -370,6 +249,9 @@ svg {
   color: #9f9f9f;
   background: #d7d7d7;
 }
+.main .MuiOutlinedInput-root.Mui-error fieldset {
+  border-width: 2px;
+}
 .main .MuiCheckbox-root.MuiCheckbox-colorPrimary {
   color: rgba(0, 0, 0, 0.26);
   -webkit-transition: 0.2s ease-out;
@@ -415,49 +297,6 @@ svg {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.main .popupButton {
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
-  background: #1976d2;
-  color: #ffffff;
-  padding: 20px;
-  z-index: 1;
-}
-.main .popupButton:after {
-  position: absolute;
-  content: "";
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: inherit;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  opacity: 0;
-  -webkit-transition: 0.4s ease-in-out;
-  transition: 0.4s ease-in-out;
-  z-index: -1;
-}
-.main .popupButton:hover {
-  background: #4791db;
-}
-.main .popupButton:hover:after {
-  width: 115%;
-  height: 115%;
-  opacity: 1;
-}
-.main .popupButton-ico {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 14px;
-}
-.main .popupButton-ico svg {
-  width: 1em;
-  height: 1em;
-}
 .main .regionPrefix {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -539,9 +378,14 @@ svg {
       -ms-flex-positive: 1;
           flex-grow: 1;
   width: 100%;
+  -webkit-animation: 0.15s animInUp ease-out;
+          animation: 0.15s animInUp ease-out;
 }
 .centerBox__inner > div {
   width: 100%;
+}
+.centerBox--products .centerBox__inner {
+  padding: 0;
 }
 .centerBox--auth .centerBox__inner {
   -webkit-box-flex: unset;
@@ -595,7 +439,7 @@ svg {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 10px;
+  gap: 25px;
 }
 .header.sticky {
   position: fixed;
@@ -624,6 +468,7 @@ svg {
       -ms-flex-pack: justify;
           justify-content: space-between;
   font-size: 14px;
+  gap: 1em;
 }
 .nav__inner-tabs {
   display: -webkit-box;
@@ -810,7 +655,7 @@ svg {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   font-size: 15px;
-  gap: 1em 0.5em;
+  gap: 1em;
   padding: 1em 20px 0.5em 20px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -821,11 +666,23 @@ svg {
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
+.productTable__header-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1em 0.5em;
+}
 .productTable__header .MuiInputBase-root {
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
   max-width: 350px;
+  min-width: 250px;
 }
 .productTable__header .MuiButtonBase-root {
   -webkit-box-flex: 1;
@@ -938,7 +795,7 @@ svg {
 }
 .popup--new .popup__inner {
   max-width: 1040px;
-  padding: 80px;
+  padding: 80px 40px;
 }
 .popupAdd__row {
   display: -webkit-box;
@@ -948,8 +805,52 @@ svg {
       -ms-flex-pack: justify;
           justify-content: space-between;
   gap: 10px;
+  max-width: 880px;
+  margin: 0 auto;
 }
-
+.main .popupButton {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  background: #1976d2;
+  color: #ffffff;
+  padding: 20px;
+  z-index: 1;
+}
+.main .popupButton:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: inherit;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  z-index: -1;
+}
+.main .popupButton:hover {
+  background: #4791db;
+}
+.main .popupButton:hover:after {
+  width: 115%;
+  height: 115%;
+  opacity: 1;
+}
+.main .popupButton-ico {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+}
+.main .popupButton-ico svg {
+  width: 1em;
+  height: 1em;
+}
 .auth {
   width: 100%;
   max-width: 400px;
@@ -1024,12 +925,13 @@ svg {
   line-height: 1.2;
   letter-spacing: 0.15px;
 }
-.auth__form-row .MuiOutlinedInput-root {
+.auth__form-row .MuiTextField-root {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 0px;
           flex: 1 0 0;
+  width: unset !important;
 }
-.auth__form-row .MuiOutlinedInput-root input {
+.auth__form-row .MuiTextField-root input {
   padding: 5px;
   color: #101010;
   font-family: "Roboto", sans-serif;
@@ -1059,6 +961,21 @@ svg {
 @media (max-width: 1160px) {
   .autoContainer {
     padding: 0 40px;
+  }
+  .header__inner-group {
+    gap: 15px;
+  }
+  .nav__inner-tabs {
+    padding: 0.5em 1.5em;
+  }
+  .nav__inner-tabs .MuiTabs-flexContainer {
+    gap: 15px;
+  }
+  .nav__inner-tabs button {
+    font-size: 12px;
+  }
+  .nav__inner-group .MuiButtonGroup-root button {
+    font-size: 14px;
   }
 }
 @media (max-width: 1025px) {
@@ -1091,7 +1008,7 @@ svg {
     background: rgba(16, 16, 16, 0.4);
     -webkit-backdrop-filter: blur(4px);
             backdrop-filter: blur(4px);
-    z-index: 1;
+    z-index: 2;
     -webkit-transform: translate(100%);
             transform: translate(100%);
     opacity: 0;
@@ -1103,7 +1020,7 @@ svg {
     position: absolute;
     top: 0;
     left: 0;
-    width: 35%;
+    width: 30%;
     min-width: 280px;
     height: 100%;
     -webkit-box-orient: vertical;
@@ -1128,6 +1045,26 @@ svg {
     -webkit-transition: 0.15s ease-in-out 0s;
     transition: 0.15s ease-in-out 0s;
   }
+  .nav__inner-tabs {
+    padding: 2.5em 0.5em;
+    width: 100%;
+  }
+  .nav__inner-tabs button {
+    width: 100%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding: 1em 1.4em;
+  }
+  .nav__inner-tabs .MuiTabs-flexContainer {
+    gap: 5px;
+  }
+  .nav__inner-tabs .MuiTabs-root {
+    width: 100%;
+  }
+  .nav__inner-tabs .MuiTabs-indicator {
+    width: 100%;
+  }
   .nav__inner-group {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1138,30 +1075,10 @@ svg {
             align-items: flex-start;
     padding: 25px 0;
     gap: 8px;
-    color: #101010;
-    border-top: 1px solid #ffffff;
     width: 100%;
   }
   .nav__inner-group:first-child {
     border: 0;
-  }
-  .nav__inner-link {
-    color: #101010;
-  }
-  .nav__inner-link:after {
-    left: 0;
-    top: 50%;
-    width: 2px;
-    height: 80%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-  }
-  .nav__inner-link:hover {
-    color: rgba(25, 118, 210, 0.3);
-  }
-  .nav__inner-link:hover:after {
-    width: 2px;
-    height: 100%;
   }
   .nav.active {
     pointer-events: all;
@@ -1181,6 +1098,17 @@ svg {
   .centerBox {
     padding: 80px 40px 40px 40px;
   }
+  .popup--new .popup__inner {
+    max-width: 660px;
+    padding: 80px 40px;
+  }
+  .popupAdd__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 15px;
+  }
 }
 @media (max-width: 940px) {
   .autoContainer {
@@ -1197,6 +1125,71 @@ svg {
     display: none;
   }
   .centerBox {
-    padding: 70px 20px 40px 20px;
+    padding: 80px 20px 40px 20px;
+  }
+  .centerBox--auth .centerBox__inner .MuiPaper-root {
+    padding: 40px 20px 20px 20px;
+    min-height: 400px;
+  }
+  .auth__title {
+    margin-bottom: 2em;
+  }
+  .auth__form-row .MuiTextField-root input {
+    font-size: 28px;
+  }
+  .main .popupButton {
+    right: 20px;
+    bottom: 20px;
+    padding: 15px;
+  }
+  .productTable__header-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+  .productTable__header .MuiInputBase-root {
+    max-width: unset;
+  }
+  .productTable__header .MuiButtonBase-root {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    max-width: unset;
+    font-size: 12px;
+  }
+}
+@media (max-width: 460px) {
+  .centerBox {
+    padding: 75px 15px 40px 15px;
+  }
+  .auth__title {
+    margin-bottom: 1.5em;
+  }
+  .auth__form-row {
+    gap: 0.6em 0.8em;
+  }
+  .auth__form-row .MuiTextField-root input {
+    font-size: 22px;
+  }
+  .popup {
+    padding: 50px 15px;
+  }
+  .popup__inner-close {
+    top: 1em;
+    right: 1em;
+    font-size: 12px;
+  }
+  .popup--new .popup__inner {
+    max-width: 660px;
+    padding: 50px 20px;
+  }
+  .popupAdd__row {
+    gap: 10px;
   }
 }

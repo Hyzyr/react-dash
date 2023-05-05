@@ -22,12 +22,17 @@
     display: flex;
     flex-grow: 1;
     width: 100%;
+    animation: 0.15s animInUp ease-out;
 
     & > div {
       width: 100%;
     }
   }
-
+  &--products & {
+    &__inner {
+      padding: 0;
+    }
+  }
   &--auth & {
     &__inner {
       flex-grow: unset;
@@ -49,7 +54,16 @@
 @mixin layouts-580 {
   .centerBox {
     padding: 80px 20px 40px 20px;
+    &--auth & {
+      &__inner {
+        .MuiPaper-root {
+          padding: 40px 20px 20px 20px;
+          min-height: 400px;
+        }
+      }
+    }
   }
+}
 @mixin layouts-460 {
   .centerBox {
     padding: 75px 15px 40px 15px;

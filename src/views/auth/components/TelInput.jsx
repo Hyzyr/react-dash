@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useIMask } from "react-imask";
-import { TextField } from "@mui/material";
+import { Link, TextField } from "@mui/material";
 import Counter from "../../../components/items/Counter";
 
 const imagesFolder = process.env.PUBLIC_URL + "images/";
 
-const TelInput = ({ isRequested, onAccept, onComplete }) => {
+const TelInput = ({ isRequested, onAccept, onComplete, resend }) => {
   const { ref } = useIMask(
     {
       mask: "(#00) 000-00-00",
@@ -24,8 +24,7 @@ const TelInput = ({ isRequested, onAccept, onComplete }) => {
         label="Phone"
         variant="standard"
         inputRef={ref}
-        c
-        helperText={<HelperText isActive={isRequested} />}
+        helperText={<HelperText isActive={isRequested} resend={resend} />}
         InputProps={{
           startAdornment: <InputPrefix />,
         }}
@@ -44,11 +43,27 @@ const InputPrefix = () => {
   );
 };
 
-const HelperText = ({ isActive }) => {
+const HelperText = ({ isActive, resend }) => {
+  const [isEnd, setIsEnd] = useState(false);
+  const resendFunc = () => {
+    resend();
+    setIsEnd(false);
+  };
+
   if (!isActive) return <></>;
+  if (isEnd)
+    return (
+      <Link
+        children="send new code"
+        underline="hover"
+        component={"button"}
+        onClick={resendFunc}
+      />
+    );
   return (
     <>
-      You can request another SMS code in <Counter numberN={60} /> second
+      You can request another SMS code in{" "}
+      <Counter numberN={60} onEnd={() => setIsEnd(true)} /> second
     </>
   );
 };

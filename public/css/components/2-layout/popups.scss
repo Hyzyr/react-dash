@@ -51,8 +51,8 @@
 
   &--new & {
     &__inner {
-        max-width: 1040px;
-      padding: 80px;
+      max-width: 1040px;
+      padding: 80px 40px;
     }
   }
   &Add {
@@ -60,8 +60,102 @@
       display: flex;
       justify-content: space-between;
       gap: 10px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+  }
+  .main &Button {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background: $primary;
+    color: $white;
+    padding: 20px;
+    z-index: 1;
 
+    &:after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba($color: #000000, $alpha: 0.2);
+      border-radius: inherit;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: 0.4s ease-in-out;
+      z-index: -1;
+    }
 
+    &:hover {
+      background: mix($primary, $white, 80%);
+      &:after {
+        width: 115%;
+        height: 115%;
+        opacity: 1;
+      }
+    }
+    &-ico {
+      display: flex;
+      font-size: 14px;
+
+      svg {
+        width: 1em;
+        height: 1em;
+      }
+    }
+    &.active {
+    }
+  }
+}
+
+@mixin popup-1025 {
+  .popup {
+    &--new & {
+      &__inner {
+        max-width: 660px;
+        padding: 80px 40px;
+      }
+    }
+    &Add {
+      &__row {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  }
+}
+
+@mixin popup-580 {
+  .popup {
+    .main &Button {
+      right: 20px;
+      bottom: 20px;
+      padding: 15px;
+    }
+  }
+}
+@mixin popup-460 {
+  .popup {
+    padding: 50px 15px;
+    &__inner {
+      &-close {
+        top: 1em;
+        right: 1em;
+        font-size: 12px;
+      }
+    }
+    &--new & {
+      &__inner {
+        max-width: 660px;
+        padding: 50px 20px;
+      }
+    }
+    &Add {
+      &__row {
+        gap: 10px;
+      }
     }
   }
 }

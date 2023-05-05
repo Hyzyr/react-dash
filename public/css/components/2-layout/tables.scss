@@ -57,17 +57,24 @@
     justify-content: space-between;
     flex-wrap: wrap;
     font-size: 15px;
-    gap: 1em 0.5em;
+    gap: 1em;
     padding: 1em 20px 0.5em 20px;
     align-items: center;
 
     &._alignStart {
       justify-content: flex-start;
     }
+    &-group {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1em 0.5em;
+    }
 
     .MuiInputBase-root {
       flex-grow: 2;
       max-width: 350px;
+      min-width: 250px;
     }
     .MuiButtonBase-root {
       flex-grow: 1;
@@ -120,5 +127,26 @@
   }
   .MuiCheckbox-root {
     padding: 0;
+  }
+}
+
+@mixin table-580 {
+  .productTable {
+    &__header {
+      &-group {
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+        order: -1;
+      }
+      .MuiInputBase-root {
+        max-width: unset;
+      }
+      .MuiButtonBase-root {
+        flex-grow: 1;
+        max-width: unset;
+        font-size: 12px;
+      }
+    }
   }
 }

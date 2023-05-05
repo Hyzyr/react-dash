@@ -328,7 +328,7 @@ const Products = () => {
     page: 0,
   });
   return (
-    <CenterBox>
+    <CenterBox addClass={"centerBox--products"}>
       <div className="productTable__outer">
         <div className="productTable__header">
           <Select value={""} displayEmpty className="smallSelect">
@@ -339,50 +339,52 @@ const Products = () => {
             <MenuItem value={20}>Twenty</MenuItem>
             <MenuItem value={30}>Thirty</MenuItem>
           </Select>
-          <Button
-            children="загузить товары"
-            variant="contained"
-            size="extraSmall"
-            color="success"
-            startIcon={
-              <Typography className="inlineIcon" component="span">
-                {MarketSvg}
-              </Typography>
-            }
-          />
-          <Button
-            children="шаблон товары"
-            variant="contained"
-            size="extraSmall"
-            color="successLight"
-            startIcon={
-              <Typography className="inlineIcon" component="span">
-                {MarketSvg}
-              </Typography>
-            }
-          />
-          <Button
-            children="загрузить доп. Инфо."
-            variant="contained"
-            size="extraSmall"
-            color="pink"
-            startIcon={
-              <Typography className="inlineIcon" component="span">
-                {MarketSvg}
-              </Typography>
-            }
-          />
-          <Button
-            children="шаблон доп. инфо."
-            variant="contained"
-            size="extraSmall"
-            color="pinkLight"
-            startIcon={
-              <Typography className="inlineIcon" component="span">
-                {MarketSvg}
-              </Typography>
-            }
-          />
+          <div className="productTable__header-group">
+            <Button
+              children="загузить товары"
+              variant="contained"
+              size="extraSmall"
+              color="success"
+              startIcon={
+                <Typography className="inlineIcon" component="span">
+                  {MarketSvg}
+                </Typography>
+              }
+            />
+            <Button
+              children="шаблон товары"
+              variant="contained"
+              size="extraSmall"
+              color="successLight"
+              startIcon={
+                <Typography className="inlineIcon" component="span">
+                  {MarketSvg}
+                </Typography>
+              }
+            />
+            <Button
+              children="загрузить доп. Инфо."
+              variant="contained"
+              size="extraSmall"
+              color="pink"
+              startIcon={
+                <Typography className="inlineIcon" component="span">
+                  {MarketSvg}
+                </Typography>
+              }
+            />
+            <Button
+              children="шаблон доп. инфо."
+              variant="contained"
+              size="extraSmall"
+              color="pinkLight"
+              startIcon={
+                <Typography className="inlineIcon" component="span">
+                  {MarketSvg}
+                </Typography>
+              }
+            />
+          </div>
         </div>
         <DataGrid
           localeText={{

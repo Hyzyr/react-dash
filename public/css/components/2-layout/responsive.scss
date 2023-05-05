@@ -4,6 +4,7 @@
   .autoContainer {
     padding: 0 40px;
   }
+  @include header-1160;
 }
 @media (max-width: 1025px) {
   .autoContainer {
@@ -11,6 +12,7 @@
   }
   @include header-1025;
   @include layouts-1025;
+  @include popup-1025;
 }
 
 @media (max-width: 940px) {
@@ -28,7 +30,12 @@
     display: none;
   }
   @include layouts-580;
+  @include auth-580;
+  @include popup-580;
+  @include table-580;
 }
 @media (max-width: 460px) {
   @include layouts-460;
+  @include auth-460;
+  @include popup-460;
 }

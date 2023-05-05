@@ -23,6 +23,13 @@
         background: $gray-2;
       }
     }
+    &OutlinedInput-root {
+      &.Mui-error {
+        fieldset {
+          border-width: 2px;
+        }
+      }
+    }
     &Checkbox-root {
       &.MuiCheckbox-colorPrimary {
         color: rgba(#000, 0.26);

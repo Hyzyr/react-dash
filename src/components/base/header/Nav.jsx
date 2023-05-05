@@ -1,26 +1,20 @@
 import React, { useState } from "react";
 
-import {
-  ButtonGroup,
-  Button,
-  Tab,
-  Tabs,
-  Badge,
-  IconButton,
-} from "@mui/material";
+import { ButtonGroup, Button, Tab, Tabs, useMediaQuery } from "@mui/material";
 import { HEADER_CONSTANTS } from "./constants";
-import { BellSVG } from "../../SVG";
 import { useNavigate } from "react-router-dom";
 import useCurrentPath from "../../../hooks/useCurrentPath";
 
 const Nav = ({ isActive, setActive, disabled }) => {
-  const [value, setValue] = useState(HEADER_CONSTANTS.tabs[0].value);
+  const [value, setValue] = useState(HEADER_CONSTANTS.tabLinks[0] || "");
   const [language, setLanguage] = useState("ru");
   const navigate = useNavigate();
+  const matches = useMediaQuery("(max-width:1025px)");
+
   useCurrentPath({
     routes: HEADER_CONSTANTS.tabLinks,
     onChange: (newPath) => {
-      if (newPath !== value) setValue(newPath);
+      if (newPath && newPath !== value) setValue(newPath);
     },
   });
 
@@ -28,14 +22,12 @@ const Nav = ({ isActive, setActive, disabled }) => {
     iconPosition: "start",
     disabled,
   };
-  const badgeContent = 0;
 
   const handleChange = (event, value) => {
     setValue(value);
-    navigate(value);
+    setTimeout(() => navigate(value), 200);
   };
   const langColor = (lang) => (language === lang ? "primary" : "muted");
-  const badgeColor = (count) => (count > 0 ? "primary" : "muted");
   const closeMenu = (event) => {
     if (event.target === event.currentTarget) setActive();
   };
@@ -50,6 +42,7 @@ const Nav = ({ isActive, setActive, disabled }) => {
             aria-label="navigation bar"
             textColor="primary"
             indicatorColor="primary"
+            orientation={matches ? "vertical" : "horizontal"}
           >
             {HEADER_CONSTANTS.tabs.map((tab) => (
               <Tab
@@ -71,14 +64,6 @@ const Nav = ({ isActive, setActive, disabled }) => {
               EN
             </Button>
           </ButtonGroup>
-
-          <Badge
-            badgeContent={badgeContent}
-            color={badgeColor(badgeContent)}
-            showZero
-          >
-            <IconButton>{BellSVG}</IconButton>
-          </Badge>
         </div>
       </div>
     </nav>

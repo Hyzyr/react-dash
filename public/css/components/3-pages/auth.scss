@@ -70,8 +70,9 @@
         line-height: 1.2;
         letter-spacing: 0.15px;
       }
-      .MuiOutlinedInput-root {
+      .MuiTextField-root {
         flex: 1 0 0;
+        width: unset !important;
 
         input {
           padding: 5px;
@@ -94,6 +95,41 @@
 
       button {
         width: 100%;
+      }
+    }
+  }
+}
+
+@mixin auth-580 {
+  .auth {
+    &__title {
+      margin-bottom: 2em;
+    }
+    &__form {
+      &-row {
+        .MuiTextField-root {
+          input {
+            font-size: 28px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin auth-460 {
+  .auth {
+    &__title {
+      margin-bottom: 1.5em;
+    }
+    &__form {
+      &-row {
+        gap: 0.6em 0.8em;
+        .MuiTextField-root {
+          input {
+            font-size: 22px;
+          }
+        }
       }
     }
   }

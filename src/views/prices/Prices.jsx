@@ -317,7 +317,7 @@ const Prices = () => {
     page: 0,
   });
   return (
-    <CenterBox>
+    <CenterBox addClass={"centerBox--products"}>
       <div className="productTable__outer">
         <div className="productTable__header _alignStart">
           <Select value={""} displayEmpty className="smallSelect">
@@ -328,29 +328,30 @@ const Prices = () => {
             <MenuItem value={20}>Twenty</MenuItem>
             <MenuItem value={30}>Thirty</MenuItem>
           </Select>
-          <Button
-            children="загузить файл акции с WB"
-            variant="contained"
-            size="extraSmall"
-            color="success"
-            startIcon={
-              <Typography className="inlineIcon" component="span">
-                {ArrowDown2Svg}
-              </Typography>
-            }
-          />
-
-          <Button
-            children="загузить файл акции на WB"
-            variant="contained"
-            size="extraSmall"
-            color="pink"
-            startIcon={
-              <Typography className="inlineIcon" component="span">
-                {ArrowUp2Svg}
-              </Typography>
-            }
-          />
+          <div className="productTable__header-group">
+            <Button
+              children="загузить файл акции с WB"
+              variant="contained"
+              size="extraSmall"
+              color="success"
+              startIcon={
+                <Typography className="inlineIcon" component="span">
+                  {ArrowDown2Svg}
+                </Typography>
+              }
+            />
+            <Button
+              children="загузить файл акции на WB"
+              variant="contained"
+              size="extraSmall"
+              color="pink"
+              startIcon={
+                <Typography className="inlineIcon" component="span">
+                  {ArrowUp2Svg}
+                </Typography>
+              }
+            />
+          </div>
         </div>
         <DataGrid
           localeText={{

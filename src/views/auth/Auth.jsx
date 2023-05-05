@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 import CenterBox from "../../components/layouts/CenterBox";
-import {
-  Button,
-  Checkbox,
-  FormControlLabel,
-} from "@mui/material";
+import { Button, Checkbox, FormControlLabel } from "@mui/material";
 import TelInput from "./components/TelInput";
 import CodeInputGroup from "./components/CodeInputGroup";
 
-
 const Auth = ({ setAuth }) => {
-  const [isRequested, setRequested] = useState(true);
-  const [isValid, setValid] = useState(true);
+  const [code, setCode] = useState("");
+  const [isCodeWrong, seCodeWrong] = useState(false);
+  const [isRequested, setRequested] = useState(false);
+  const [isValid, setValid] = useState(false);
   const [remember, setRemember] = useState(false);
 
   const onRequest = () => setRequested(true);
+  const resend = () => setRequested(true);
   const telInputProps = {
     isRequested,
     onAccept: () => setValid(false),
@@ -22,8 +20,14 @@ const Auth = ({ setAuth }) => {
     onChange: () => {},
   };
 
+  const onCodeChange = (data) => {
+    console.log("onCodeChange", data);
+    seCodeWrong(false);
+    setCode(data);
+  };
   const onSubmit = () => {
-    setAuth(true);
+    if (code.length === 6 && code.toString() === "123456") setAuth(true);
+    else seCodeWrong(true);
   };
 
   return (
@@ -33,7 +37,7 @@ const Auth = ({ setAuth }) => {
           <h3>login</h3>
         </div>
         <div className="auth__form">
-          <TelInput {...telInputProps} />
+          <TelInput {...telInputProps} resend={resend} />
           {!isRequested ? (
             <Button
               variant="contained"
@@ -47,6 +51,8 @@ const Auth = ({ setAuth }) => {
               onSubmit={onSubmit}
               remember={remember}
               setRemember={setRemember}
+              onCodeChange={onCodeChange}
+              isError={isCodeWrong}
             />
           )}
         </div>
@@ -55,10 +61,16 @@ const Auth = ({ setAuth }) => {
   );
 };
 
-const LoginForm = ({ onSubmit, remember, setRemember }) => {
+const LoginForm = ({
+  onSubmit,
+  remember,
+  setRemember,
+  onCodeChange,
+  isError,
+}) => {
   return (
     <>
-      <CodeInputGroup />
+      <CodeInputGroup onChange={onCodeChange} isError={isError} />
       <div className="auth__form-group">
         <Button
           variant="contained"
