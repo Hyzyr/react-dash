@@ -3,6 +3,7 @@ import CenterBox from "../../components/layouts/CenterBox";
 import { Button, Checkbox, FormControlLabel } from "@mui/material";
 import TelInput from "./components/TelInput";
 import CodeInputGroup from "./components/CodeInputGroup";
+import { useTranslation } from "react-i18next";
 
 const Auth = ({ setAuth }) => {
   const [code, setCode] = useState("");
@@ -10,6 +11,8 @@ const Auth = ({ setAuth }) => {
   const [isRequested, setRequested] = useState(false);
   const [isValid, setValid] = useState(false);
   const [remember, setRemember] = useState(false);
+
+  const { t } = useTranslation();
 
   const onRequest = () => setRequested(true);
   const resend = () => setRequested(true);
@@ -21,7 +24,6 @@ const Auth = ({ setAuth }) => {
   };
 
   const onCodeChange = (data) => {
-    console.log("onCodeChange", data);
     seCodeWrong(false);
     setCode(data);
   };
@@ -34,14 +36,14 @@ const Auth = ({ setAuth }) => {
     <CenterBox addClass={"centerBox--auth"}>
       <div className="auth">
         <div className="auth__title">
-          <h3>login</h3>
+          <h3>{t("auth.login")}</h3>
         </div>
         <div className="auth__form">
-          <TelInput {...telInputProps} resend={resend} />
+          <TelInput {...telInputProps} resend={resend} t={t} />
           {!isRequested ? (
             <Button
               variant="contained"
-              children="Request OTP"
+              children={t("auth.request")}
               size="large"
               disabled={!isValid}
               onClick={onRequest}
@@ -50,6 +52,7 @@ const Auth = ({ setAuth }) => {
             <LoginForm
               onSubmit={onSubmit}
               remember={remember}
+              t={t}
               setRemember={setRemember}
               onCodeChange={onCodeChange}
               isError={isCodeWrong}
@@ -67,14 +70,19 @@ const LoginForm = ({
   setRemember,
   onCodeChange,
   isError,
+  t,
 }) => {
   return (
     <>
-      <CodeInputGroup onChange={onCodeChange} isError={isError} />
+      <CodeInputGroup
+        onChange={onCodeChange}
+        isError={isError}
+        label={!isError ? t("auth.codeLabel") : t("auth.codeLabelError")}
+      />
       <div className="auth__form-group">
         <Button
           variant="contained"
-          children="Login"
+          children={t("auth.loginBtn")}
           size="large"
           onClick={() => onSubmit()}
         />
@@ -87,7 +95,7 @@ const LoginForm = ({
               }}
             />
           }
-          label="Keep me sign in"
+          label={t("auth.keepSigned")}
         />
       </div>
     </>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import Header from "./components/base/header/Header";
 import Theme from "./Theme";
 import { Navigate, Route, Routes } from "react-router-dom";
@@ -10,12 +11,11 @@ import Prices from "./views/prices/Prices";
 import { Typography } from "@mui/material";
 
 const App = () => {
-  const [auth, setAuth] = useState(false);
+  const [auth, setAuth] = useState(true);
 
   return (
     <Theme>
       <Header navEnabled={auth} />
-      {/* <h1>APp is running</h1> */}
       <Routes>
         {auth ? (
           <>

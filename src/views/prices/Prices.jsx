@@ -14,18 +14,12 @@ import {
   ExportSvg,
   ColumnSvg,
   DensitySvg,
-  MarketSvg,
   ArrowDown2Svg,
   ArrowUp2Svg,
 } from "../../components/SVG";
-import {
-  Button,
-  FormControl,
-  MenuItem,
-  Select,
-  Typography,
-} from "@mui/material";
+import { Button, MenuItem, Select, Typography } from "@mui/material";
 import { GridToolbarDensitySelector } from "@mui/x-data-grid";
+import { useTranslation } from "react-i18next";
 
 const columns = [
   {
@@ -311,11 +305,22 @@ const rows = [
     status: "active",
   },
 ];
+
 const Prices = () => {
   const [paginationModel, setPaginationModel] = useState({
     pageSize: 5,
     page: 0,
   });
+  const { t, i18n } = useTranslation();
+  const columnsData = React.useMemo(() => {
+    const tableTitles = t("products.tableHeaders", { returnObjects: true });
+
+    return columns.map((item, index) => ({
+      ...item,
+      headerName: tableTitles[index] ?? item.headerName,
+    }));
+  }, [t, i18n]);
+
   return (
     <CenterBox addClass={"centerBox--products"}>
       <div className="productTable__outer">
@@ -354,15 +359,10 @@ const Prices = () => {
           </div>
         </div>
         <DataGrid
-          localeText={{
-            toolbarFilters: "Фильтры",
-            toolbarExport: "Экспорт",
-            toolbarColumns: "Столбцы",
-            toolbarDensity: "Вид",
-          }}
+          localeText={t("dataGrid.toolbar", { returnObjects: true })}
           className="productTable"
           rows={rows}
-          columns={columns}
+          columns={columnsData}
           pageSizeOptions={[5, 10]}
           paginationModel={paginationModel}
           onPaginationModelChange={setPaginationModel}

@@ -1,0 +1,54 @@
+{
+  "text1": "ru-text",
+  "nav": ["главная", "товары", "работа с ценами", "магазины и api"],
+  "header": {
+    "user": {
+      "title": "Настройки учетной записи",
+      "profile": "Профиль",
+      "account": "Мой счет",
+      "addAccount": "Добавить учетную запись",
+      "settings": "Настройки",
+      "logout": "Выйти"
+    }
+  },
+  "auth": {
+    "login": "Войти в аккаунт",
+    "loginBtn": "Войти",
+    "keepSigned": "Запомнить меня",
+    "codeLabel": "СМС-код",
+    "codeLabelError": "СМС-код неверный",
+    "fieldLabel": "Телефон",
+    "resend": "отправить новый код",
+    "request": "Запросить одноразовый пароль",
+    "requestSMS": "Вы можете запросить другой SMS-код через {{seconds}} секунд"
+  },
+  "home": {
+    "tableHeaders": ["Магазин", "Коментарий", "Ключ API"]
+  },
+  "products": {
+    "tableHeaders": [
+      "ЛК WB",
+      "Активен",
+      "Бренд",
+      "Предмет API",
+      "Код размера (chrt_id)",
+      "Артикул поставщика",
+      "Артикул WB API",
+      "Размер",
+      "Баркод",
+      "Розничная цена"
+    ],
+    "loadGoods": "загузить товары",
+    "templateGoods": "шаблон товары",
+    "loadAdditionalInfo": "загрузить доп. Инфо.",
+    "additionalInfoTemplate": "шаблон доп. инфо."
+  },
+  "dataGrid": {
+    "toolbar": {
+      "toolbarFilters": "Фильтры",
+      "toolbarExport": "Экспорт",
+      "toolbarColumns": "Столбцы",
+      "toolbarDensity": "Вид"
+    }
+  }
+}

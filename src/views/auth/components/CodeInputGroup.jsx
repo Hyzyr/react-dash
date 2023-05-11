@@ -9,28 +9,40 @@ const MASK_SETTINGS = {
   },
 };
 
-const CodeInputGroup = ({ onChange, isError }) => {
+const CodeInputGroup = ({ onChange, isError, label }) => {
   const [code, setCode] = useState(Array.from({ length: 6 }));
 
-  const updateInput = (index) => ({ target }) => {
-    updateValue(index)(target.value);
-    let currentRefIndex = -1;
-    refs.find((refItem, index) => {
-      if (refItem.current === target) {
-        currentRefIndex = index;
-        return true;
-      }
-    });
+  const onKeyUp = (index) => (e) => {
+    let currentRefIndex = index;
+    if (
+      (e.key === "Backspace" ||
+        e.key === "Delete" ||
+        e.keyCode === 13 ||
+        e.keyCode === 8) &&
+      refs[currentRefIndex - 1]
+    ) {
+      refs[currentRefIndex - 1].current.focus();
+      refs[currentRefIndex - 1].current.select();
+    }
+  };
+  const updateInput = (index) => (e) => {
+    updateValue(index)(e.target.value);
+    let currentRefIndex = index;
 
-    if (target.value !== "" && currentRefIndex + 1 !== refs.length)
+    if (e.target.value !== "" && currentRefIndex + 1 !== refs.length) {
       refs[currentRefIndex + 1].current.focus();
+      refs[currentRefIndex + 1].current.select();
+    }
   };
-  const updateValue = (index, ref = null) => (value) => {
-    let newCode = [...code];
-    newCode[index] = value;
-    setCode(newCode);
-    if (onChange) onChange(newCode.join(""));
-  };
+
+  const updateValue =
+    (index, ref = null) =>
+    (value) => {
+      let newCode = [...code];
+      newCode[index] = value;
+      setCode(newCode);
+      if (onChange) onChange(newCode.join(""));
+    };
 
   const { ref: ref1 } = useIMask(MASK_SETTINGS, {
     onAccept: updateValue(0),
@@ -61,51 +73,20 @@ const CodeInputGroup = ({ onChange, isError }) => {
             color={isError ? "error" : "default"}
             variant="inherit"
           >
-            {isError ? "SMS code icorrect" : "SMS code"}
+            {label}
           </Typography>
         </label>
-        <CodeInput
-          inputRef={ref1}
-          aria-label={`code digit ${0}`}
-          value={code[0] || ""}
-          onChange={updateInput(0)}
-          error={isError}
-        />
-        <CodeInput
-          inputRef={ref2}
-          aria-label={`code digit ${1}`}
-          value={code[1] || ""}
-          onChange={updateInput(1)}
-          error={isError}
-        />
-        <CodeInput
-          inputRef={ref3}
-          aria-label={`code digit ${2}`}
-          value={code[2] || ""}
-          onChange={updateInput(2)}
-          error={isError}
-        />
-        <CodeInput
-          inputRef={ref4}
-          aria-label={`code digit ${3}`}
-          value={code[3] || ""}
-          onChange={updateInput(3)}
-          error={isError}
-        />
-        <CodeInput
-          inputRef={ref5}
-          aria-label={`code digit ${4}`}
-          value={code[4] || ""}
-          onChange={updateInput(4)}
-          error={isError}
-        />
-        <CodeInput
-          inputRef={ref6}
-          aria-label={`code digit ${5}`}
-          value={code[5] || ""}
-          onChange={updateInput(5)}
-          error={isError}
-        />
+        {refs.map((reff, index) => (
+          <CodeInput
+            key={index}
+            inputRef={reff}
+            aria-label={`code digit ${index}`}
+            value={code[index] || ""}
+            onChange={updateInput(index)}
+            onKeyUp={onKeyUp(index)}
+            error={isError}
+          />
+        ))}
       </div>
     </>
   );

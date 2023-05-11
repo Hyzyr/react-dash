@@ -24,6 +24,7 @@ import {
   Typography,
 } from "@mui/material";
 import { GridToolbarDensitySelector } from "@mui/x-data-grid";
+import { useTranslation } from "react-i18next";
 
 const columns = [
   {
@@ -327,6 +328,16 @@ const Products = () => {
     pageSize: 5,
     page: 0,
   });
+  const { t, i18n } = useTranslation();
+  const columnsData = React.useMemo(() => {
+    const tableTitles = t("products.tableHeaders", { returnObjects: true });
+
+    return columns.map((item, index) => ({
+      ...item,
+      headerName: tableTitles[index] ?? item.headerName,
+    }));
+  }, [t, i18n]);
+
   return (
     <CenterBox addClass={"centerBox--products"}>
       <div className="productTable__outer">
@@ -341,7 +352,7 @@ const Products = () => {
           </Select>
           <div className="productTable__header-group">
             <Button
-              children="загузить товары"
+              children={t("products.loadGoods")}
               variant="contained"
               size="extraSmall"
               color="success"
@@ -352,7 +363,7 @@ const Products = () => {
               }
             />
             <Button
-              children="шаблон товары"
+              children={t("products.templateGoods")}
               variant="contained"
               size="extraSmall"
               color="successLight"
@@ -363,7 +374,7 @@ const Products = () => {
               }
             />
             <Button
-              children="загрузить доп. Инфо."
+              children={t("products.loadAdditionalInfo")}
               variant="contained"
               size="extraSmall"
               color="pink"
@@ -374,7 +385,7 @@ const Products = () => {
               }
             />
             <Button
-              children="шаблон доп. инфо."
+              children={t("products.additionalInfoTemplate")}
               variant="contained"
               size="extraSmall"
               color="pinkLight"
@@ -387,15 +398,10 @@ const Products = () => {
           </div>
         </div>
         <DataGrid
-          localeText={{
-            toolbarFilters: "Фильтры",
-            toolbarExport: "Экспорт",
-            toolbarColumns: "Столбцы",
-            toolbarDensity: "Вид",
-          }}
+          localeText={t("dataGrid.toolbar", { returnObjects: true })}
           className="productTable"
           rows={rows}
-          columns={columns}
+          columns={columnsData}
           pageSizeOptions={[5, 10]}
           paginationModel={paginationModel}
           onPaginationModelChange={setPaginationModel}

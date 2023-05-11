@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Avatar,
   Divider,
@@ -7,7 +8,7 @@ import {
   MenuItem,
   Tooltip,
 } from "@mui/material";
-import React from "react";
+import { useTranslation } from "react-i18next";
 
 const HeaderMenu = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -18,10 +19,10 @@ const HeaderMenu = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
+  const { t } = useTranslation();
   return (
     <>
-      <Tooltip title="Account settings">
+      <Tooltip title={t("header.user.title")}>
         <IconButton
           onClick={handleClick}
           size="small"
@@ -70,29 +71,29 @@ const HeaderMenu = () => {
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
         <MenuItem onClick={handleClose}>
-          <Avatar /> Profile
+          <Avatar /> {t("header.user.profile")}
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <Avatar /> My account
+          <Avatar /> {t("header.user.account")}
         </MenuItem>
         <Divider />
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
             <i className="icon icon--plus"></i>
           </ListItemIcon>
-          Add another account
+          {t("header.user.addAccount")}
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
             <i className="icon icon--plus"></i>
           </ListItemIcon>
-          Settings
+          {t("header.user.settings")}
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
             <i className="icon icon--plus"></i>
           </ListItemIcon>
-          Logout
+          {t("header.user.logout")}
         </MenuItem>
       </Menu>
     </>

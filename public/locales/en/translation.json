@@ -1,0 +1,54 @@
+{
+  "text1": "en-text",
+  "nav": ["home", "products", "work with prices", "shops and api"],
+  "header": {
+    "user": {
+      "title": "Account settings",
+      "profile": "Profile",
+      "account": "My account",
+      "addAccount": "Add another account",
+      "settings": "Settings",
+      "logout": "Logout"
+    }
+  },
+  "auth": {
+    "login": "Login",
+    "loginBtn": "Login",
+    "keepSigned": "Keep me sign in",
+    "codeLabel": "SMS code",
+    "codeLabelError": "SMS code is icorrect",
+    "fieldLabel": "Phone",
+    "resend": "send new code",
+    "request": "Request OTP",
+    "requestSMS": "You can request another SMS code in {{seconds}} seconds"
+  },
+  "home": {
+    "tableHeaders": ["Shop", "Comment", "API key"]
+  },
+  "products": {
+    "tableHeaders": [
+      "LK WB",
+      "Active",
+      "Brand",
+      "API subject",
+      "Code size (chrt_id)",
+      "Supplier SKU",
+      "WB API SKU",
+      "Size",
+      "Barcode",
+      "Retail priceа"
+    ],
+    "loadGoods": "load goods",
+    "templateGoods": "template goods",
+    "loadAdditionalInfo": "load add. info",
+    "additionalInfoTemplate": "add. info template"
+  },
+  "dataGrid": {
+    "toolbar": {
+      "toolbarFilters": "Filters",
+      "toolbarExport": "Export",
+      "toolbarColumns": "columns",
+      "toolbarDensity": "View"
+    }
+  }
+}
