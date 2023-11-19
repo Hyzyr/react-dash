@@ -23,7 +23,14 @@
     "requestSMS": "Вы можете запросить другой SMS-код через {{seconds}} секунд"
   },
   "home": {
-    "tableHeaders": ["Магазин", "Коментарий", "Ключ API"]
+    "tableHeaders": ["Магазин", "Коментарий", "Ключ API"],
+    "popup": {
+      "shopName": "Название магазина",
+      "comment": "Комментарий",
+      "apiKey": "Ключ API",
+      "addBtn": "Добавить магазин",
+      "errorMessage": "Что-то пошло не так !"
+    }
   },
   "products": {
     "tableHeaders": [

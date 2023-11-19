@@ -11,3 +11,25 @@
   -webkit-animation-name: animInUp;
   animation-name: animInUp;
 }
+@keyframes spinner {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+}

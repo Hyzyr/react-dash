@@ -53,6 +53,10 @@
     &__inner {
       max-width: 1040px;
       padding: 80px 40px;
+
+      .MuiFormControl-root {
+        flex: 1 0 0;
+      }
     }
   }
   &Add {
@@ -64,6 +68,8 @@
       margin: 0 auto;
     }
   }
+
+  //fixed button bottom right
   .main &Button {
     position: fixed;
     right: 30px;
@@ -87,7 +93,6 @@
       transition: 0.4s ease-in-out;
       z-index: -1;
     }
-
     &:hover {
       background: mix($primary, $white, 80%);
       &:after {

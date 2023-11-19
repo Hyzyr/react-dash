@@ -23,7 +23,14 @@
     "requestSMS": "You can request another SMS code in {{seconds}} seconds"
   },
   "home": {
-    "tableHeaders": ["Shop", "Comment", "API key"]
+    "tableHeaders": ["Shop", "Comment", "API key"],
+    "popup": {
+      "shopName": "Name of shop",
+      "comment": "A comment",
+      "apiKey": "API key",
+      "addBtn": "Add shop",
+      "errorMessage": "Something went wrong !"
+    }
   },
   "products": {
     "tableHeaders": [
