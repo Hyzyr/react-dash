@@ -1,12 +1,15 @@
-@media (max-width: 1280px) {
+// media (max-width: 1280px)
+@include xxlg-xxxlg {
 }
-@media (max-width: 1160px) {
+// media (max-width: 1160px)
+@include xlg-xxlg {
   .autoContainer {
     padding: 0 40px;
   }
   @include header-1160;
 }
-@media (max-width: 1025px) {
+// media (max-width: 1025px)
+@include lg-xlg {
   .autoContainer {
     padding: 0 30px;
   }
@@ -15,17 +18,20 @@
   @include popup-1025;
 }
 
-@media (max-width: 940px) {
+// media (max-width: 940px)
+@include md-lg {
   .autoContainer {
     padding: 0 25px;
   }
 }
-@media (max-width: 768px) {
+// media (max-width: 768px)
+@include sm-md {
   .autoContainer {
     padding: 0 15px;
   }
 }
-@media (max-width: 580px) {
+// media (max-width: 580px)
+@include xsm-sm {
   ._hideMob {
     display: none;
   }
@@ -34,7 +40,8 @@
   @include popup-580;
   @include table-580;
 }
-@media (max-width: 460px) {
+// media (max-width: 460px)
+@include xxsm-xsm {
   @include layouts-460;
   @include auth-460;
   @include popup-460;
