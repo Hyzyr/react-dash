@@ -21,3 +21,55 @@
     }
   }
 }
+
+@include xxlg-xxxlg {
+  .dashboard {
+    &__cards {
+      .dashboardCard {
+        width: calc(33.33% - 16px);
+        &-amount {
+          font-size: 65px;
+        }
+      }
+    }
+  }
+}
+
+@include xlg-xxlg {
+  .dashboard {
+    &__cards {
+      gap: 15px;
+      .dashboardCard {
+        width: calc(33.33% - 10px);
+        &-amount {
+          font-size: 65px;
+        }
+      }
+    }
+  }
+}
+
+@include lg-xlg {
+  .dashboard {
+    padding: 40px 80px 40px 40px;
+
+    &__cards {
+      gap: 1.5em;
+      .dashboardCard {
+        width: 100%;
+        max-width: unset;
+      }
+    }
+  }
+}
+
+@include xsm-sm {
+  .dashboard {
+    padding: 35px 50px 35px 30px;
+  }
+}
+@include xxsm-xsm {
+  .dashboard {
+    padding: 30px 20px;
+  }
+}
