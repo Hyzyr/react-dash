@@ -1,19 +1,73 @@
-import { Box, Typography } from "@mui/material";
-import "./styles/dashboard.scss";
+import { Box, Button, Link, Typography } from "@mui/material";
 import React from "react";
 import DashboardCard, {
-  DASHBOARD_CARD_BG,
+  DASHBOARD_CARD_STYLE,
+  DashboardCardBody,
+  DashboardCardFooter,
+  DashboardCardHeader,
 } from "./dashboardCard/DashboardCard";
+import DashboardCardAmount from "./dashboardCard/DashboardCardAmount";
+
+import "./styles/dashboard.scss";
+import DashboardCardState from "./dashboardCard/DashboardCardState";
 
 const Dashboard = () => {
   return (
     <Box className="dashboard">
-      <DashboardTitle title={"Word of the Day"} />
-      <div className="dashboard__cards">
-        <DashboardCard bg={DASHBOARD_CARD_BG.blue}></DashboardCard>
-        <DashboardCard bg={DASHBOARD_CARD_BG.violet}></DashboardCard>
-        <DashboardCard bg={DASHBOARD_CARD_BG.mint}></DashboardCard>
-      </div>
+      <DashboardTitle title={"Вам доступно:"} />
+      <Box className="dashboard__cards">
+        <DashboardCard style={DASHBOARD_CARD_STYLE.blue}>
+          <DashboardCardHeader label="Магазины" />
+          <DashboardCardBody>
+            <DashboardCardAmount amount={0} />
+          </DashboardCardBody>
+          <DashboardCardFooter
+            title={
+              <>
+                из <b>100</b> магазинов
+              </>
+            }
+          />
+        </DashboardCard>
+        <DashboardCard style={DASHBOARD_CARD_STYLE.violet}>
+          <DashboardCardHeader label="SKU" />
+          <DashboardCardBody>
+            <DashboardCardAmount amount={0} />
+          </DashboardCardBody>
+          <DashboardCardFooter
+            title={
+              <>
+                из <b>100 000</b> SKU
+              </>
+            }
+          />
+        </DashboardCard>
+        <DashboardCard style={DASHBOARD_CARD_STYLE.mint}>
+          <DashboardCardHeader label="Акции" />
+          <DashboardCardBody>
+            <DashboardCardState value={3} percentage={20} color="error">
+              -60% до -90% на всё
+            </DashboardCardState>
+            <DashboardCardState value={11} percentage={60} color="warning">
+              Лови момент!!! <br />
+              Скидки до 65%
+            </DashboardCardState>
+          </DashboardCardBody>
+          <DashboardCardFooter hideAddButton>
+            <Link
+              color={"success.dark"}
+              href="/"
+              sx={{
+                fontWeight: 500,
+                fontSize: 14,
+                marginLeft: "auto",
+              }}
+            >
+              все акции
+            </Link>
+          </DashboardCardFooter>
+        </DashboardCard>
+      </Box>
     </Box>
   );
 };

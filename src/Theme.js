@@ -5,6 +5,7 @@ const Theme = ({ children }) => {
   const theme = createTheme({
     status: {
       danger: "#e53e3e",
+      success: "#4CAF50",
     },
     typography: {
       fontFamily: `"Roboto", "Helvetica", "Arial", sans-serif`,
@@ -34,8 +35,20 @@ const Theme = ({ children }) => {
           },
         ],
       },
+      MuiLink: {
+        variants: [
+          {
+            props: { color: "success" },
+            style: { fontSize: 14, lineHeight: 1, padding: ".65em 1em" },
+          },
+        ],
+      },
     },
     palette: {
+      white: {
+        main: "#fff",
+        contrastText: "#444",
+      },
       primary: {
         main: "#1976d2",
       },
@@ -51,12 +64,18 @@ const Theme = ({ children }) => {
       },
       success: {
         main: "#4CAF50",
+        dark: "#206923",
         contrastText: "#fff",
       },
       successLight: {
         main: "#5CB660",
         contrastText: "#fff",
       },
+      pink: {
+        main: "#BA68C8",
+        contrastText: "#fff",
+      },
+    
       pink: {
         main: "#BA68C8",
         contrastText: "#fff",

@@ -1,0 +1,12 @@
+@import "assets/styles/presets/variables.scss";
+
+.dashboardCard {
+  & &-amount {
+    font-family: $font-main;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 75px;
+    line-height: 1.2;
+    color: $black;
+  }
+}

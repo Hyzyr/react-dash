@@ -1,17 +1,31 @@
-@import "assets/styles/presets/mixin.scss";
+@import "assets/styles/presets/variables.scss";
 
-.dashboard {
+.dashboardCard {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-height: 100%;
-  padding: 30px 30px 12vh 30px;
-  width: 100%;
-  max-width: 1140px;
-  margin: 0 auto;
+  padding: 0.5em 0.35em 0.35em 1em;
+  max-width: 350px;
 
-  &__cards {
+  &__body {
     display: flex;
-    gap: 30px;
+    flex-direction: column;
+    gap: 1em;
+    margin: auto 0;
+  }
+  &__footer {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+
+    .circleButton {
+      margin-left: auto;
+    }
+  }
+  &._violet & {
+    &__footer {
+      .circleButton {
+        background: $secondary;
+      }
+    }
   }
 }

@@ -92,3 +92,21 @@
     }
   }
 }
+.main .circleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  width: 2.5em;
+  height: 2.5em;
+  padding: 0.5em;
+  line-height: 1;
+
+  &--primary {
+    color: $white;
+    background: $primary;
+    &:hover {
+      background: rgba($primary, 0.8);
+    }
+  }
+}

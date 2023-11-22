@@ -1,72 +1,98 @@
 import React from "react";
 import "./styles/dashboardCards.scss";
 import {
-  Box,
-  Button,
   Card,
   CardActions,
   CardContent,
+  CardHeader,
+  Chip,
   IconButton,
   Typography,
 } from "@mui/material";
 import { PlusSVG } from "components/SVG";
+import { GridMoreVertIcon } from "@mui/x-data-grid";
 
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
-  >
-    •
-  </Box>
-);
-
-const DASHBOARD_CARD_BG = {
-  blue: `var(--white-blue)`,
-  violet: `var(--white-violet)`,
-  mint: `var(--white-mint)`,
+const DASHBOARD_CARD_STYLE = {
+  blue: "blue",
+  violet: "violet",
+  mint: "mint",
 };
 
-const DashboardCard = ({ bg = DASHBOARD_CARD_BG.blue, children }) => {
+const DASHBOARD_CARD_STYLE_THEME = {
+  blue: {
+    className: "_blue",
+    bg: `var(--white-blue)`,
+  },
+  violet: {
+    className: "_violet",
+    bg: `var(--white-violet)`,
+  },
+  mint: {
+    className: "_mint",
+    bg: `var(--white-mint)`,
+  },
+};
+
+const DashboardCard = ({ style = DASHBOARD_CARD_STYLE.blue, children }) => {
+  const styleTheme = DASHBOARD_CARD_STYLE_THEME[style];
+
   return (
-    <Card style={{ backgroundColor: bg }} className="dashboardCard">
+    <Card
+      style={{ backgroundColor: styleTheme.bg }}
+      className={`dashboardCard ${styleTheme.className}`}
+    >
       {children}
-      <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          Word of the Day
-        </Typography>
-        <Typography variant="h5" component="div">
-          be{bull}nev{bull}o{bull}lent
-        </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          adjective
-        </Typography>
-        <Typography variant="body2">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
-        </Typography>
-      </CardContent>
     </Card>
   );
 };
 
-const DashboardCardFooter = ({ text }) => {
+const DashboardCardHeader = ({ label }) => {
+  const labelItem = <Chip color="white" label={label} />;
+
   return (
-    <CardActions>
-      <Typography sx={{ mb: 1.5 }} color="text.secondary">
-        {text}
-      </Typography>
-      <IconButton
-        variant="contained"
-        size="large"
-        // onClick={() => setShowPopup(!showPopup)}
-      >
-        <span>{PlusSVG}</span>
-      </IconButton>
+    <CardHeader
+      className="dashboardCard__header"
+      avatar={labelItem}
+      action={
+        <IconButton aria-label="settings">
+          <GridMoreVertIcon />
+        </IconButton>
+      }
+    >
+      <b>asd</b>
+    </CardHeader>
+  );
+};
+const DashboardCardBody = ({ children }) => {
+  return <CardContent className="dashboardCard__body">{children}</CardContent>;
+};
+
+const DashboardCardFooter = ({ title, hideAddButton = false, children }) => {
+  return (
+    <CardActions className="dashboardCard__footer">
+      {!hideAddButton && (
+        <>
+          <Typography sx={{ mb: 0 }}>{title ?? children}</Typography>
+          <IconButton
+            variant="contained"
+            size="large"
+            className="circleButton circleButton--primary"
+            // onClick={() => setShowPopup(!showPopup)}
+          >
+            <span>{PlusSVG}</span>
+          </IconButton>
+        </>
+      )}
+      {hideAddButton && children && <>{children}</>}
     </CardActions>
   );
 };
 
-export { DASHBOARD_CARD_BG, DashboardCardFooter };
+export {
+  DASHBOARD_CARD_STYLE,
+  DashboardCardHeader,
+  DashboardCardBody,
+  DashboardCardFooter,
+};
 
 export default DashboardCard;

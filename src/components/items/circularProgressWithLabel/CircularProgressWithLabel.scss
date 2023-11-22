@@ -1,0 +1,49 @@
+@import "assets/styles/presets/variables.scss";
+
+.main .circularProgress {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  font-size: 20px;
+  width: 2.5em;
+  height: 2.5em;
+
+  &:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: $white;
+    opacity: 0.5;
+    z-index: -1;
+  }
+  &-line {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  &-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    
+    // display
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    //font
+    color: $black;
+    font-family: $font-main;
+    font-style: normal;
+    font-weight: 700;
+    font-size: inherit;
+    line-height: 1.2;
+  }
+}

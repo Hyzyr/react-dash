@@ -7,7 +7,7 @@
   z-index: 1;
   transition: 0.2s ease-out;
   transition-property: opacity, transform, padding;
-  box-shadow: 0px 0px 11px rgba(25, 118, 210, 0.1);
+  box-shadow: 0px 0px 11px rgba($primary, 0.06);
   background: $white;
 
   &__inner {
@@ -30,7 +30,7 @@
   &.sticky {
     position: fixed;
     padding: 20px 0;
-    border-bottom: 1px solid rgba($secondary, 0.4);
+    border-bottom: 1px solid rgba($primary, 0.1);
     animation: 0.3s sticky ease-in;
     transition-duration: 0.5s;
   }
