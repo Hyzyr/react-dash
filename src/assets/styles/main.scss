@@ -1,24 +1,24 @@
 // 0-addons
-@import "./0-plugins/animations.scss";
-@import "./0-plugins/font-icon.scss";
-// 1-main components
-@import "./1-main/variables.scss";
-@import "./1-main/mixin.scss";
-@import "./1-main/typography.scss";
-@import "./1-main/nulifier.scss";
-@import "./1-main/mui-presets.scss";
+@import "./plugins/animations.scss";
+@import "./plugins/font-icon.scss";
+// presets components
+@import "./presets/variables.scss";
+@import "./presets/mixin.scss";
+@import "./presets/typography.scss";
+@import "./presets/nulifier.scss";
+@import "./presets/mui-presets.scss";
 
-// 2-layout components
-@import "./2-layout/components.scss";
-@import "./2-layout/layouts.scss";
-@import "./2-layout/footer.scss";
-@import "./2-layout/header.scss";
-@import "./2-layout/tables.scss";
-@import "./2-layout/popups.scss";
+// layout components
+@import "./layout/components.scss";
+@import "./layout/layouts.scss";
+@import "./layout/footer.scss";
+@import "./layout/header.scss";
+@import "./layout/tables.scss";
+@import "./layout/popups.scss";
 
-// 3-pages components
-@import "./3-pages/auth.scss";
-@import "./3-pages/index.scss";
+// pages components
+@import "./pages/auth.scss";
+@import "./pages/index.scss";
 
 // responsive
-@import "./2-layout/responsive.scss";
+@import "./layout/responsive.scss";

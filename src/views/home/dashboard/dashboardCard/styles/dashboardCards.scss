@@ -1,4 +1,4 @@
-// @import "assets/styles/";
+@import "assets/styles/presets/mixin.scss";
 
 .dashboard {
   display: flex;
@@ -13,6 +13,5 @@
   &__cards {
     display: flex;
     gap: 30px;
-    // background-color: $primary;
   }
 }

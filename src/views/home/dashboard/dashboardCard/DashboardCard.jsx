@@ -28,7 +28,7 @@ const DASHBOARD_CARD_BG = {
 
 const DashboardCard = ({ bg = DASHBOARD_CARD_BG.blue, children }) => {
   return (
-    <Card style={{ backgroundColor: bg }}>
+    <Card style={{ backgroundColor: bg }} className="dashboardCard">
       {children}
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
