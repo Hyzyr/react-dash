@@ -1,0 +1,24 @@
+// 0-addons
+@import "./0-plugins/animations.scss";
+@import "./0-plugins/font-icon.scss";
+// 1-main components
+@import "./1-main/variables.scss";
+@import "./1-main/mixin.scss";
+@import "./1-main/typography.scss";
+@import "./1-main/nulifier.scss";
+@import "./1-main/mui-presets.scss";
+
+// 2-layout components
+@import "./2-layout/components.scss";
+@import "./2-layout/layouts.scss";
+@import "./2-layout/footer.scss";
+@import "./2-layout/header.scss";
+@import "./2-layout/tables.scss";
+@import "./2-layout/popups.scss";
+
+// 3-pages components
+@import "./3-pages/auth.scss";
+@import "./3-pages/index.scss";
+
+// responsive
+@import "./2-layout/responsive.scss";
