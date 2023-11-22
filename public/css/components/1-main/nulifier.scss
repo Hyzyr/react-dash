@@ -10,7 +10,7 @@ html {
   padding: 0px;
   border: none;
   outline: none;
-  font-family: $font-secondary;
+  font-family: $font-main;
   box-sizing: border-box;
 }
 button {
@@ -52,7 +52,7 @@ input::-webkit-inner-spin-button {
 body {
   height: 100%;
   cursor: default;
-  font-family: $font-secondary, sans-serif;
+  font-family: $font-main, sans-serif;
   font-size: 14px;
   color: $black;
   line-height: 1.7em;

@@ -19,6 +19,38 @@ $lightBlue: #f6fafd;
 $white: #ffffff;
 $white-2: #f6fafd;
 $white-bg: #ecf0f3;
+$white-blue: #e6f3fc;
+$white-violet: #e1d6f1;
+$white-mint: #d6edd9;
 $bg: #bfbaba;
 
-$font-secondary: "Roboto", sans-serif;
+$font-main: "Roboto", sans-serif;
+
+:root {
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+  --primaryShadow: #{$primaryShadow};
+  --black: #{$black};
+  --black-2: #{$black-2};
+  --black-3: #{$black-3};
+  --black-4: #{$black-4};
+  --black-5: #{$black-5};
+  --gray: #{$gray};
+  --gray-2: #{$gray-2};
+  --gray-3: #{$gray-3};
+  --red: #{$red};
+  --red-2: #{$red-2};
+  --green: #{$green};
+  --pink: #{$pink};
+  --blue: #{$blue};
+  --blue-2: #{$blue-2};
+  --lightBlue: #{$lightBlue};
+  --white: #{$white};
+  --white-2: #{$white-2};
+  --white-bg: #{$white-bg};
+  --bg: #{$bg};
+  --white-blue: #{$white-blue};
+  --white-violet: #{$white-violet};
+  --white-mint: #{$white-mint};
+  --font-main: #{$font-main};
+}

@@ -11,7 +11,7 @@ import Prices from "./views/prices/Prices";
 import { Typography } from "@mui/material";
 
 const App = () => {
-  const [auth, setAuth] = useState(false);
+  const [auth, setAuth] = useState(true);
 
   return (
     <Theme>

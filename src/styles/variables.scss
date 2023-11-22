@@ -1,0 +1,50 @@
+$primary: #1976d2;
+$secondary: rgba(25, 118, 210, 0.3);
+$primaryShadow: 0px 4px 10px rgba(25, 118, 210, 0.3);
+$black: #101010;
+$black-2: #212121;
+$black-3: #666666;
+$black-4: #949698;
+$black-5: #b8b3b3;
+$gray: #9f9f9f;
+$gray-2: #d7d7d7;
+$gray-3: #717171;
+$red: #d32f2f;
+$red-2: #e06d6d;
+$green: #4caf50;
+$pink: #ba68c8;
+$blue: #a8c1da;
+$blue-2: #deebf9;
+$lightBlue: #f6fafd;
+$white: #ffffff;
+$white-2: #f6fafd;
+$white-bg: #ecf0f3;
+$bg: #bfbaba;
+
+$font-main: "Roboto", sans-serif;
+
+:root {
+  --primary: $primary;
+  --secondary: $secondary;
+  --primaryShadow: $primaryShadow;
+  --black: $black;
+  --black-2: $black-2;
+  --black-3: $black-3;
+  --black-4: $black-4;
+  --black-5: $black-5;
+  --gray: $gray;
+  --gray-2: $gray-2;
+  --gray-3: $gray-3;
+  --red: $red;
+  --red-2: $red-2;
+  --green: $green;
+  --pink: $pink;
+  --blue: $blue;
+  --blue-2: $blue-2;
+  --lightBlue: $lightBlue;
+  --white: $white;
+  --white-2: $white-2;
+  --white-bg: $white-bg;
+  --bg: $bg;
+  --font-main: $font-main;
+}

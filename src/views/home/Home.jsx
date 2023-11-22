@@ -4,6 +4,7 @@ import ApiTable from "./ApiTable";
 import { IconButton } from "@mui/material";
 import { PlusSVG } from "../../components/SVG";
 import CenterBox from "../../components/layouts/CenterBox";
+import Dashboard from "./dashboard/Dashboard";
 
 const Home = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -12,7 +13,8 @@ const Home = () => {
   return (
     <>
       <CenterBox>
-        <ApiTable />
+        {/* <ApiTable /> */}
+        <Dashboard />
       </CenterBox>
       <IconButton
         className="popupButton"
