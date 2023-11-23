@@ -48,7 +48,13 @@
     "loadGoods": "load goods",
     "templateGoods": "template goods",
     "loadAdditionalInfo": "load add. info",
-    "additionalInfoTemplate": "add. info template"
+    "additionalInfoTemplate": "add. info template",
+    "popups": {
+      "apiKey": "api key",
+      "enterApi": "enter api",
+      "uploadExcelFile": "upload excel file",
+      "submitApi": "submit api"
+    }
   },
   "dataGrid": {
     "toolbar": {

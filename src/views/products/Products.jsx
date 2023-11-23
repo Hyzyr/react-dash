@@ -12,7 +12,8 @@ import { GridToolbarDensitySelector } from "@mui/x-data-grid";
 import { useTranslation } from "react-i18next";
 import IconSVG from "components/items/iconSVG/IconSVG";
 import TemplateButton from "components/items/templateButton/TemplateButton";
-import TemplatePopup from "./TemplatePopup";
+import TemplatePopup from "./popups/TemplatePopup";
+import ApiPopup from "./popups/ApiPopup";
 
 const columns = [
   {
@@ -331,6 +332,17 @@ const Products = () => {
     if (state === undefined) setPopup(popup === "template" ? null : "template");
     else setPopup(!state ? null : "template");
   };
+  const toggleApiPopup = (state) => {
+    if (state === undefined) setPopup(popup === "api" ? null : "api");
+    else setPopup(!state ? null : "api");
+  };
+  const onApiClick = () => {
+    toggleApiPopup(true);
+  };
+  const submitAPI = () => {
+    console.log("submit functionality");
+    setPopup(null);
+  };
 
   return (
     <>
@@ -417,7 +429,16 @@ const Products = () => {
         </Box>
       </CenterBox>
       {popup === "template" && (
-        <TemplatePopup closePopup={() => toggleTemplatePopup(false)} />
+        <TemplatePopup
+          closePopup={() => toggleTemplatePopup(false)}
+          onApiClick={onApiClick}
+        />
+      )}
+      {popup === "api" && (
+        <ApiPopup
+          closePopup={() => toggleApiPopup(false)}
+          submitAPI={submitAPI}
+        />
       )}
     </>
   );

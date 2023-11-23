@@ -48,7 +48,13 @@
     "loadGoods": "загузить товары",
     "templateGoods": "шаблон товары",
     "loadAdditionalInfo": "загрузить доп. Инфо.",
-    "additionalInfoTemplate": "шаблон доп. инфо."
+    "additionalInfoTemplate": "шаблон доп. инфо.",
+    "popups": {
+      "apiKey": "Ключ API",
+      "enterApi": "ввести api",
+      "uploadExcelFile": "загрузить файл exel",
+      "submitApi": "ввести api"
+    }
   },
   "dataGrid": {
     "toolbar": {
