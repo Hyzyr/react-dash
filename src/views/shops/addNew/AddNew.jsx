@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import PopupWrapper from "../../../components/popups/PopupWrapper";
 import { Box, Button, TextField, Tooltip, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import IconSVG from "components/items/iconSVG/IconSVG";
+import PopupWrapper from "components/popups/PopupWrapper";
 
 import "./addNew.scss";
-import IconSVG from "components/items/iconSVG/IconSVG";
 
 const AddNew = ({ closePopup }) => {
   const [isError, setIsError] = useState(false);

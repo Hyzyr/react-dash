@@ -98,7 +98,7 @@ const AddShopButton = ({ title, onClick }) => {
   return (
     <Tooltip title={title} arrow placement="left">
       <IconButton
-        className="popupButton"
+        className="popupButton zoomIn"
         variant="contained"
         size="large"
         onClick={onClick}

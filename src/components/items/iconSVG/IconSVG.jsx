@@ -4,12 +4,13 @@ import "./IconSVG.scss";
 
 const SVG_PATH = "./images/icons";
 
-const IconSVG = ({ iconName }) => {
+const IconSVG = ({ iconName, ...props }) => {
   return (
     <ReactSVG
       className="icon"
       wrapper="span"
       src={`${SVG_PATH}/${iconName}.svg`}
+      {...props}
     />
   );
 };

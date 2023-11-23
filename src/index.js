@@ -4,7 +4,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import PreLoader, { PreLoaderWrapper } from "./components/base/PreLoader";
 
-import "assets/styles/main.scss";
+import "styles/main.scss";
 import "./utils/i18n";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

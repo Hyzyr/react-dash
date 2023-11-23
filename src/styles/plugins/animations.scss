@@ -1,3 +1,14 @@
+@keyframes zoomIn {
+  from {
+    opacity: 0.75;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @keyframes animInUp {
   from {
     transform: translateY(10%) scale(0.98);
@@ -11,6 +22,10 @@
   -webkit-animation-name: animInUp;
   animation-name: animInUp;
 }
+.zoomIn {
+  animation: zoomIn 0.3s ease both;
+}
+
 @keyframes spinner {
   0% {
     width: 0;

@@ -60,6 +60,7 @@ const Theme = ({ children }) => {
       },
       muted: {
         main: "#B3B3B3",
+        light: "#7C7C7C",
         contrastText: "#fff",
       },
       success: {
@@ -75,7 +76,7 @@ const Theme = ({ children }) => {
         main: "#BA68C8",
         contrastText: "#fff",
       },
-    
+
       pink: {
         main: "#BA68C8",
         contrastText: "#fff",

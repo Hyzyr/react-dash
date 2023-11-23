@@ -7,10 +7,12 @@ import {
   GridToolbarExport,
   GridToolbarFilterButton,
 } from "@mui/x-data-grid";
-import { Button, MenuItem, Select, Typography } from "@mui/material";
+import { Box, Button, MenuItem, Select, Typography } from "@mui/material";
 import { GridToolbarDensitySelector } from "@mui/x-data-grid";
 import { useTranslation } from "react-i18next";
 import IconSVG from "components/items/iconSVG/IconSVG";
+import TemplateButton from "components/items/templateButton/TemplateButton";
+import TemplatePopup from "./TemplatePopup";
 
 const columns = [
   {
@@ -310,6 +312,7 @@ const rows = [
   },
 ];
 const Products = () => {
+  const [popup, setPopup] = useState(null);
   const [paginationModel, setPaginationModel] = useState({
     pageSize: 5,
     page: 0,
@@ -324,31 +327,37 @@ const Products = () => {
     }));
   }, [t, i18n]);
 
+  const toggleTemplatePopup = (state) => {
+    if (state === undefined) setPopup(popup === "template" ? null : "template");
+    else setPopup(!state ? null : "template");
+  };
+
   return (
-    <CenterBox addClass={"centerBox--products"}>
-      <div className="productTable__outer">
-        <div className="productTable__header">
-          <Select value={""} displayEmpty className="smallSelect">
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
-          </Select>
-          <div className="productTable__header-group">
-            <Button
-              children={t("products.loadGoods")}
-              variant="contained"
-              size="extraSmall"
-              color="success"
-              startIcon={
-                <Typography className="inlineIcon" component="span">
-                  <IconSVG iconName={"market"} />
-                </Typography>
-              }
-            />
-            {/* <Button
+    <>
+      <CenterBox addClass={"centerBox--products"}>
+        <Box className="productTable__outer">
+          <Box className="productTable__header">
+            <Select value={""} displayEmpty className="smallSelect">
+              <MenuItem value="">
+                <em>None</em>
+              </MenuItem>
+              <MenuItem value={10}>Ten</MenuItem>
+              <MenuItem value={20}>Twenty</MenuItem>
+              <MenuItem value={30}>Thirty</MenuItem>
+            </Select>
+            <Box className="productTable__header-group">
+              <Button
+                children={t("products.loadGoods")}
+                variant="contained"
+                size="extraSmall"
+                color="success"
+                startIcon={
+                  <Typography className="inlineIcon" component="span">
+                    <IconSVG iconName={"market"} />
+                  </Typography>
+                }
+              />
+              {/* <Button
               children={t("products.templateGoods")}
               variant="contained"
               size="extraSmall"
@@ -359,18 +368,18 @@ const Products = () => {
                 </Typography>
               }
             /> */}
-            <Button
-              children={t("products.loadAdditionalInfo")}
-              variant="contained"
-              size="extraSmall"
-              color="pink"
-              startIcon={
-                <Typography className="inlineIcon" component="span">
-                  <IconSVG iconName={"market"} />
-                </Typography>
-              }
-            />
-            {/* <Button
+              <Button
+                children={t("products.loadAdditionalInfo")}
+                variant="contained"
+                size="extraSmall"
+                color="pink"
+                startIcon={
+                  <Typography className="inlineIcon" component="span">
+                    <IconSVG iconName={"market"} />
+                  </Typography>
+                }
+              />
+              {/* <Button
               children={t("products.additionalInfoTemplate")}
               variant="contained"
               size="extraSmall"
@@ -381,24 +390,36 @@ const Products = () => {
                 </Typography>
               }
             /> */}
-          </div>
-        </div>
-        <DataGrid
-          localeText={t("dataGrid.toolbar", { returnObjects: true })}
-          className="productTable"
-          rows={rows}
-          columns={columnsData}
-          pageSizeOptions={[5, 10]}
-          paginationModel={paginationModel}
-          onPaginationModelChange={setPaginationModel}
-          slots={{
-            toolbar: CustomToolbar,
-          }}
-          checkboxSelection
-          disableRowSelectionOnClicks
-        />
-      </div>
-    </CenterBox>
+            </Box>
+            <TemplateButton
+              iconName={"xls-file"}
+              title={t("products.additionalInfoTemplate")}
+              onClick={() => toggleTemplatePopup(true)}
+              sx={{
+                marginLeft: "auto",
+              }}
+            />
+          </Box>
+          <DataGrid
+            localeText={t("dataGrid.toolbar", { returnObjects: true })}
+            className="productTable"
+            rows={rows}
+            columns={columnsData}
+            pageSizeOptions={[5, 10]}
+            paginationModel={paginationModel}
+            onPaginationModelChange={setPaginationModel}
+            slots={{
+              toolbar: CustomToolbar,
+            }}
+            checkboxSelection
+            disableRowSelectionOnClicks
+          />
+        </Box>
+      </CenterBox>
+      {popup === "template" && (
+        <TemplatePopup closePopup={() => toggleTemplatePopup(false)} />
+      )}
+    </>
   );
 };
 

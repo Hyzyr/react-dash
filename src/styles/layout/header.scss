@@ -75,11 +75,16 @@
           color: rgba($black, 0.4) !important;
         }
       }
+      .MuiTab-iconWrapper {
+        display: flex;
+        & > span {
+          display: inline-flex;
+        }
+      }
 
       button {
         display: flex;
         align-items: center;
-        gap: 0.5em;
 
         font-size: 14px;
         line-height: 1.2;

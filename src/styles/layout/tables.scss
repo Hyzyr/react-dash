@@ -69,18 +69,18 @@
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 1em 0.5em;
-    }
 
+      .MuiButtonBase-root {
+        flex-grow: 1;
+        min-width: min-content;
+        max-width: 250px;
+        white-space: nowrap;
+      }
+    }
     .MuiInputBase-root {
       flex-grow: 2;
       max-width: 350px;
       min-width: 250px;
-    }
-    .MuiButtonBase-root {
-      flex-grow: 1;
-      min-width: min-content;
-      max-width: 250px;
-      white-space: nowrap;
     }
   }
   &__toolbar {
