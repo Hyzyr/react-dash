@@ -1,19 +1,19 @@
 export const HEADER_CONSTANTS = {
   tabs: [
     {
-      iconClass: "icon icon--main",
+      iconName: "main",
       value: "/home",
     },
     {
-      iconClass: "icon icon--product",
+      iconName: "product",
       value: "/products",
     },
     {
-      iconClass: "icon icon--price",
+      iconName: "price",
       value: "/manage-prices",
     },
     {
-      iconClass: "icon icon--shop",
+      iconName: "shop",
       value: "/manage-shop",
     },
   ],

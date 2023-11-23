@@ -4,6 +4,7 @@ import { Box, Button, TextField, Tooltip, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 import "./addNew.scss";
+import IconSVG from "components/items/iconSVG/IconSVG";
 
 const AddNew = ({ closePopup }) => {
   const [isError, setIsError] = useState(false);
@@ -85,7 +86,7 @@ const AddNewField = ({ tooltip, ...props }) => {
       <TextField {...props} className="popupAdd__field-input" />
       <Tooltip title={tooltip} placement="bottom" arrow>
         <Button className="popupAdd__field-icon" color="muted">
-          <span className="icon icon--info" />
+          <IconSVG iconName={"info"} />
         </Button>
       </Tooltip>
     </Box>

@@ -9,6 +9,7 @@ import {
   Tooltip,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import IconSVG from "components/items/iconSVG/IconSVG";
 
 const HeaderMenu = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -31,7 +32,7 @@ const HeaderMenu = () => {
           aria-expanded={open ? "true" : undefined}
         >
           <Avatar sx={{ width: 32, height: 32 }}>
-            <i className="icon icon--account"></i>
+            <IconSVG iconName={"account"} />
           </Avatar>
         </IconButton>
       </Tooltip>
@@ -79,19 +80,19 @@ const HeaderMenu = () => {
         <Divider />
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
-            <i className="icon icon--plus"></i>
+            <IconSVG iconName={"plus"} />
           </ListItemIcon>
           {t("header.user.addAccount")}
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
-            <i className="icon icon--plus"></i>
+            <IconSVG iconName={"plus"} />
           </ListItemIcon>
           {t("header.user.settings")}
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
-            <i className="icon icon--plus"></i>
+            <IconSVG iconName={"plus"} />
           </ListItemIcon>
           {t("header.user.logout")}
         </MenuItem>

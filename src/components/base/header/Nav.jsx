@@ -5,6 +5,7 @@ import { ButtonGroup, Button, Tab, Tabs, useMediaQuery } from "@mui/material";
 import { HEADER_CONSTANTS } from "./constants";
 import { useNavigate } from "react-router-dom";
 import useCurrentPath from "../../../hooks/useCurrentPath";
+import IconSVG from "components/items/iconSVG/IconSVG";
 
 const Nav = ({ isActive, setActive, disabled }) => {
   const [value, setValue] = useState(HEADER_CONSTANTS.tabLinks[0] || "");
@@ -50,7 +51,7 @@ const Nav = ({ isActive, setActive, disabled }) => {
                 key={tab.value}
                 label={"" + navTitles[index]}
                 value={tab.value}
-                icon={<i className={tab.iconClass}></i>}
+                icon={<IconSVG iconName={tab.iconName} />}
                 {...tabProps}
               />
             ))}

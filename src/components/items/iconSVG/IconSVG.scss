@@ -1,0 +1,16 @@
+.icon {
+  display: inline-flex;
+  font-size: 18px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  span {
+    display: inline-flex;
+  }
+  svg {
+    color: inherit;
+    width: 1em;
+    height: 1em;
+  }
+}
