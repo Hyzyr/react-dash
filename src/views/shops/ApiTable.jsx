@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { Button } from "@mui/material";
-import { CrossSVG } from "../../components/SVG";
 import { useTranslation } from "react-i18next";
+import IconSVG from "components/items/iconSVG/IconSVG";
 
 const ApiTable = ({ rows, columns }) => {
   const { t, i18n } = useTranslation();
@@ -39,7 +39,7 @@ const ApiTable = ({ rows, columns }) => {
                 variant="text"
                 color="error"
                 onClick={() => console.log(row)}
-                startIcon={CrossSVG}
+                startIcon={<IconSVG iconName={"close2"} />}
                 sx={{
                   textTransform: "lowercase",
                 }}

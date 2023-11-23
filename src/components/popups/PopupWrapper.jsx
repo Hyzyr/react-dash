@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { CrossSVG } from "../SVG";
+import IconSVG from "components/items/iconSVG/IconSVG";
 
 const PopupWrapper = ({ addClass = "", close, children }) => {
   const onFogClick = (e) => {
@@ -10,7 +10,7 @@ const PopupWrapper = ({ addClass = "", close, children }) => {
     <div className={`popup ${addClass}`} onClick={onFogClick}>
       <div className="popup__inner">
         <button type="button" className="popup__inner-close" onClick={close}>
-          {CrossSVG}
+          <IconSVG iconName={"close2"} />
         </button>
         {children}
       </div>

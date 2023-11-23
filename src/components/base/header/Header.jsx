@@ -5,7 +5,7 @@ import AutoContainer from "../../layouts/AutoContainer";
 import Nav from "./Nav";
 import HeaderMenu from "./HeaderMenu";
 import { Badge, IconButton } from "@mui/material";
-import { BellSVG } from "../../SVG";
+import IconSVG from "components/items/iconSVG/IconSVG";
 
 const publicFolder = process.env.PUBLIC_URL;
 
@@ -40,7 +40,7 @@ const Header = ({ navEnabled }) => {
               showZero
             >
               <IconButton onClick={() => setBadgeContent(badgeContent + 1)}>
-                {BellSVG}
+                <IconSVG iconName={"bell"} />
               </IconButton>
             </Badge>
             <HeaderMenu />

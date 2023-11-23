@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Typography, IconButton, Tooltip } from "@mui/material";
-import { PlusSVG } from "components/SVG";
 import CenterBox from "components/layouts/centerBox/CenterBox";
 import AddNew from "./addNew/AddNew";
 import ApiTable from "./ApiTable";
+import IconSVG from "components/items/iconSVG/IconSVG";
 
 const rows = [
   { id: 1, description: "Snow", shop: "Jon", api_key: 35 },
@@ -103,7 +103,9 @@ const AddShopButton = ({ title, onClick }) => {
         size="large"
         onClick={onClick}
       >
-        <span className="popupButton-ico">{PlusSVG}</span>
+        <span className="popupButton-ico">
+          <IconSVG iconName={"plus"} />
+        </span>
       </IconButton>
     </Tooltip>
   );

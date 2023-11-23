@@ -9,8 +9,8 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
-import { PlusSVG } from "components/SVG";
 import { GridMoreVertIcon } from "@mui/x-data-grid";
+import IconSVG from "components/items/iconSVG/IconSVG";
 
 const DASHBOARD_CARD_STYLE = {
   blue: "blue",
@@ -79,7 +79,9 @@ const DashboardCardFooter = ({ title, hideAddButton = false, children }) => {
             className="circleButton circleButton--primary"
             // onClick={() => setShowPopup(!showPopup)}
           >
-            <span>{PlusSVG}</span>
+            <span>
+              <IconSVG iconName={"plus"} />
+            </span>
           </IconButton>
         </>
       )}

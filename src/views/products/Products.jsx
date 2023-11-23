@@ -7,18 +7,10 @@ import {
   GridToolbarExport,
   GridToolbarFilterButton,
 } from "@mui/x-data-grid";
-import {
-  ArrowDownSvg,
-  ErrorSvg,
-  FilterSvg,
-  ExportSvg,
-  ColumnSvg,
-  DensitySvg,
-  MarketSvg,
-} from "../../components/SVG";
 import { Button, MenuItem, Select, Typography } from "@mui/material";
 import { GridToolbarDensitySelector } from "@mui/x-data-grid";
 import { useTranslation } from "react-i18next";
+import IconSVG from "components/items/iconSVG/IconSVG";
 
 const columns = [
   {
@@ -352,7 +344,7 @@ const Products = () => {
               color="success"
               startIcon={
                 <Typography className="inlineIcon" component="span">
-                  {MarketSvg}
+                  <IconSVG iconName={"market"} />
                 </Typography>
               }
             />
@@ -363,7 +355,7 @@ const Products = () => {
               color="successLight"
               startIcon={
                 <Typography className="inlineIcon" component="span">
-                  {MarketSvg}
+                  <IconSVG iconName={"market"} />
                 </Typography>
               }
             /> */}
@@ -374,7 +366,7 @@ const Products = () => {
               color="pink"
               startIcon={
                 <Typography className="inlineIcon" component="span">
-                  {MarketSvg}
+                  <IconSVG iconName={"market"} />
                 </Typography>
               }
             />
@@ -385,7 +377,7 @@ const Products = () => {
               color="pinkLight"
               startIcon={
                 <Typography className="inlineIcon" component="span">
-                  {MarketSvg}
+                  <IconSVG iconName={"market"} />
                 </Typography>
               }
             /> */}
@@ -418,7 +410,7 @@ const CustomToolbar = () => {
           button: {
             startIcon: (
               <Typography className="inlineIcon" component="span">
-                {FilterSvg}
+                <IconSVG iconName={"filter"} />
               </Typography>
             ),
           },
@@ -427,21 +419,21 @@ const CustomToolbar = () => {
       <GridToolbarExport
         startIcon={
           <Typography className="inlineIcon" component="span">
-            {ExportSvg}
+            <IconSVG iconName={"export"} />
           </Typography>
         }
       />
       <GridToolbarColumnsButton
         startIcon={
           <Typography className="inlineIcon" component="span">
-            {ColumnSvg}
+            <IconSVG iconName={"columns"} />
           </Typography>
         }
       />
       <GridToolbarDensitySelector
         startIcon={
           <Typography className="inlineIcon" component="span">
-            {DensitySvg}
+            <IconSVG iconName={"density"} />
           </Typography>
         }
       />
@@ -452,10 +444,15 @@ const StatusCell = ({ status }) => {
   if (status === "active")
     return (
       <Typography color="success.main" component="span" className="inlineIcon">
-        {ArrowDownSvg}
+        <IconSVG iconName={"arrow-down"} />
       </Typography>
     );
-  if (status === "error") return <span>{ErrorSvg}</span>;
+  if (status === "error")
+    return (
+      <span>
+        <IconSVG iconName={"attention"} />
+      </span>
+    );
   return "----";
 };
 
