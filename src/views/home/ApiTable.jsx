@@ -52,6 +52,7 @@ const ApiTable = () => {
     pageSize: 5,
     page: 0,
   });
+  const length = rows.length;
   const columnsData = React.useMemo(() => {
     const tableTitles = t("home.tableHeaders", { returnObjects: true });
 
@@ -93,6 +94,7 @@ const ApiTable = () => {
         pageSizeOptions={[5, 10]}
         paginationModel={paginationModel}
         onPaginationModelChange={setPaginationModel}
+        hideFooterPagination={length === 0}
       />
     </div>
   );

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import AddNew from "./AddNew";
+import AddNew from "./addNew/AddNew";
 import ApiTable from "./ApiTable";
-import { IconButton } from "@mui/material";
+import { Box, IconButton, Tooltip } from "@mui/material";
 import { PlusSVG } from "../../components/SVG";
-import CenterBox from "../../components/layouts/CenterBox";
+import CenterBox from "../../components/layouts/centerBox/CenterBox";
 import Dashboard from "./dashboard/Dashboard";
 
 const Home = () => {
@@ -13,17 +13,19 @@ const Home = () => {
   return (
     <>
       <CenterBox>
-        {/* <ApiTable /> */}
-        <Dashboard />
+        <ApiTable />
+        {/* <Dashboard /> */}
       </CenterBox>
-      <IconButton
-        className="popupButton"
-        variant="contained"
-        size="large"
-        onClick={() => setShowPopup(!showPopup)}
-      >
-        <span className="popupButton-ico">{PlusSVG}</span>
-      </IconButton>
+      <Tooltip title="Добавить магазин" arrow placement="left">
+        <IconButton
+          className="popupButton"
+          variant="contained"
+          size="large"
+          onClick={() => setShowPopup(!showPopup)}
+        >
+          <span className="popupButton-ico">{PlusSVG}</span>
+        </IconButton>
+      </Tooltip>
       {showPopup && <AddNew closePopup={closePopup} />}
     </>
   );

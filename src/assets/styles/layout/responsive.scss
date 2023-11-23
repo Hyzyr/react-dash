@@ -14,7 +14,6 @@
     padding: 0 30px;
   }
   @include header-1025;
-  @include layouts-1025;
   @include popup-1025;
 }
 
@@ -35,14 +34,12 @@
   ._hideMob {
     display: none;
   }
-  @include layouts-580;
   @include auth-580;
   @include popup-580;
   @include table-580;
 }
 // media (max-width: 460px)
 @include xxsm-xsm {
-  @include layouts-460;
   @include auth-460;
   @include popup-460;
 }

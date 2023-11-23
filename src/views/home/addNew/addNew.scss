@@ -1,0 +1,63 @@
+@import "assets/styles/presets/variables.scss";
+@import "assets/styles/presets/mixin.scss";
+
+.popupAdd {
+  max-width: 880px;
+  margin: 0 auto;
+
+  & &-submit {
+    flex-shrink: 0;
+  }
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  &__message {
+    margin-top: 0.5em;
+  }
+  & &__field {
+    display: flex;
+    position: relative;
+
+    &-input {
+      width: 100%;
+
+      input {
+        padding-right: 3em;
+      }
+    }
+    &-icon {
+      position: absolute;
+      top: 50%;
+      right: 0.5em;
+      width: 2.3em;
+      height: 2.3em;
+      padding: 0.5em;
+      transform: translateY(-50%);
+      min-width: unset;
+
+      .icon {
+        line-height: 1;
+        font-size: 1.8em;
+        display: inline-flex;
+      }
+    }
+  }
+}
+
+@include lg-xlg {
+  .popupAdd {
+    &__row {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+}
+@include xxsm-xsm {
+  .popupAdd {
+    &__row {
+      gap: 10px;
+    }
+  }
+}

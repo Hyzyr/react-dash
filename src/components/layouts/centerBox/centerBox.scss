@@ -1,0 +1,66 @@
+@import "assets/styles/presets/mixin.scss";
+@import "assets/styles/presets/variables.scss";
+
+.centerBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 100px 60px 70px 60px;
+  overflow-y: auto;
+
+  &__inner {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    animation: 0.15s animInUp ease-out;
+
+    & > div {
+      width: 100%;
+    }
+  }
+  &--products & {
+    &__inner {
+      padding: 0;
+    }
+  }
+  &--auth & {
+    &__inner {
+      flex-grow: unset;
+      max-width: 600px;
+
+      .MuiPaper-root {
+        padding: 60px 30px 30px 30px;
+        min-height: 500px;
+      }
+    }
+  }
+}
+
+// media (max-width: 1025px)
+@include lg-xlg {
+  .centerBox {
+    padding: 80px 40px 40px 40px;
+  }
+}
+// media (max-width: 580px)
+@include xsm-sm {
+  .centerBox {
+    padding: 80px 20px 40px 20px;
+    &--auth & {
+      &__inner {
+        .MuiPaper-root {
+          padding: 40px 20px 20px 20px;
+          min-height: 400px;
+        }
+      }
+    }
+  }
+}
+// media (max-width: 460px)
+@include xxsm-xsm {
+  .centerBox {
+    padding: 75px 15px 40px 15px;
+  }
+}

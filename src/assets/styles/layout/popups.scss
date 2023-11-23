@@ -59,15 +59,6 @@
       }
     }
   }
-  &Add {
-    &__row {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      max-width: 880px;
-      margin: 0 auto;
-    }
-  }
 
   //fixed button bottom right
   .main &Button {
@@ -123,12 +114,6 @@
         padding: 80px 40px;
       }
     }
-    &Add {
-      &__row {
-        flex-direction: column;
-        gap: 15px;
-      }
-    }
   }
 }
 
@@ -155,11 +140,6 @@
       &__inner {
         max-width: 660px;
         padding: 50px 20px;
-      }
-    }
-    &Add {
-      &__row {
-        gap: 10px;
       }
     }
   }

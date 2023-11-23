@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CenterBox from "../../components/layouts/CenterBox";
+import CenterBox from "../../components/layouts/centerBox/CenterBox";
 import {
   DataGrid,
   GridToolbarColumnsButton,
