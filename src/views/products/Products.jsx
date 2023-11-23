@@ -16,13 +16,7 @@ import {
   DensitySvg,
   MarketSvg,
 } from "../../components/SVG";
-import {
-  Button,
-  FormControl,
-  MenuItem,
-  Select,
-  Typography,
-} from "@mui/material";
+import { Button, MenuItem, Select, Typography } from "@mui/material";
 import { GridToolbarDensitySelector } from "@mui/x-data-grid";
 import { useTranslation } from "react-i18next";
 
@@ -362,7 +356,7 @@ const Products = () => {
                 </Typography>
               }
             />
-            <Button
+            {/* <Button
               children={t("products.templateGoods")}
               variant="contained"
               size="extraSmall"
@@ -372,7 +366,7 @@ const Products = () => {
                   {MarketSvg}
                 </Typography>
               }
-            />
+            /> */}
             <Button
               children={t("products.loadAdditionalInfo")}
               variant="contained"
@@ -384,7 +378,7 @@ const Products = () => {
                 </Typography>
               }
             />
-            <Button
+            {/* <Button
               children={t("products.additionalInfoTemplate")}
               variant="contained"
               size="extraSmall"
@@ -394,7 +388,7 @@ const Products = () => {
                   {MarketSvg}
                 </Typography>
               }
-            />
+            /> */}
           </div>
         </div>
         <DataGrid
