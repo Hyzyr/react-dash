@@ -1,0 +1,70 @@
+{
+  "tableHeaders": {
+    "brand": {
+      "nameShort": "Бренд",
+      "name": "Бренд"
+    },
+    "item": {
+      "nameShort": "Предмет",
+      "name": "Предмет"
+    },
+    "supplierCode": {
+      "nameShort": "Арт. поставщика",
+      "name": "Артикул поставщика"
+    },
+    "size": {
+      "nameShort": "Размер",
+      "name": "Размер"
+    },
+    "retailPrice": {
+      "nameShort": "Розн. цена",
+      "name": "Розницная цена"
+    },
+    "costPrice": {
+      "nameShort": "Себес.",
+      "name": "Себе стоимость"
+    },
+    "conversion": {
+      "nameShort": "Конверсия",
+      "name": "Конверсия"
+    },
+    "salesModel": {
+      "nameShort": "Модель продаж",
+      "name": "Модель продаж"
+    },
+    "stock": {
+      "nameShort": "Склад",
+      "name": "Склад"
+    },
+    "margin": {
+      "nameShort": "Маржа",
+      "name": "Маржа"
+    },
+    "stdDiscount": {
+      "nameShort": "Стд скидка",
+      "name": "Стд скидка"
+    },
+    "activity": {
+      "nameShort": "Активность",
+      "name": "Активность"
+    }
+  },
+
+  "loadGoods": "загузить товары",
+  "templateGoods": "шаблон товары",
+  "loadAdditionalInfo": "загрузить доп. Инфо.",
+  "additionalInfoTemplate": "шаблон доп. инфо.",
+  "popups": {
+    "apiKey": "Ключ API",
+    "enterApi": "ввести api",
+    "uploadExcelFile": "загрузить файл exel",
+    "submitApi": "ввести api",
+    "deleteItems": "УДАЛИТЬ ТОВАРЫ ИЗ РАСЧЁТА",
+    "deleteItemsConfirm": "Вы собираетесь активировать эти артикулы:",
+    "addItems": "Добавить ТОВАРЫ в РАСЧЁТ",
+    "addItemsConfirm": "Вы собираетесь активировать эти артикулы:",
+    "deactivateDuration": "На какой срок деактивируем?",
+    "forever": "Навсегда",
+    "forPeriod": "На определенный срок"
+  }
+}

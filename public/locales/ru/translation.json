@@ -11,6 +11,20 @@
       "logout": "Выйти"
     }
   },
+  "prices": {
+    "tableHeaders": [
+      "ЛК WB3",
+      "Активен",
+      "Бренд",
+      "Предмет API",
+      "Код размера (chrt_id)",
+      "Артикул поставщика",
+      "Артикул WB API",
+      "Размер",
+      "Баркод",
+      "Розничная цена"
+    ]
+  },
   "auth": {
     "login": "Войти в аккаунт",
     "loginBtn": "Войти",
@@ -32,30 +46,6 @@
       "errorMessage": "Что-то пошло не так !"
     }
   },
-  "products": {
-    "tableHeaders": [
-      "ЛК WB",
-      "Активен",
-      "Бренд",
-      "Предмет API",
-      "Код размера (chrt_id)",
-      "Артикул поставщика",
-      "Артикул WB API",
-      "Размер",
-      "Баркод",
-      "Розничная цена"
-    ],
-    "loadGoods": "загузить товары",
-    "templateGoods": "шаблон товары",
-    "loadAdditionalInfo": "загрузить доп. Инфо.",
-    "additionalInfoTemplate": "шаблон доп. инфо.",
-    "popups": {
-      "apiKey": "Ключ API",
-      "enterApi": "ввести api",
-      "uploadExcelFile": "загрузить файл exel",
-      "submitApi": "ввести api"
-    }
-  },
   "dataGrid": {
     "toolbar": {
       "toolbarFilters": "Фильтры",
@@ -63,5 +53,9 @@
       "toolbarColumns": "Столбцы",
       "toolbarDensity": "Вид"
     }
+  },
+  "general": {
+    "cancel": "отмена",
+    "submit": "Подтвердить"
   }
 }

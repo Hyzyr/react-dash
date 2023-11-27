@@ -51,7 +51,10 @@
   }
 }
 .productTable {
+  height: unset !important;
   border: 0 !important;
+  flex-grow: 1;
+
   &__header {
     display: flex;
     justify-content: space-between;
@@ -84,6 +87,7 @@
     }
   }
   &__toolbar {
+    
     font-size: 15px;
     padding: 0.5em 20px 1em 20px !important;
 
@@ -101,6 +105,22 @@
       .inlineIcon {
         color: $primary;
       }
+    }
+  }
+  &__outer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5em 1.5em;
+
+    .MuiButton-root {
+      font-size: 16px;
+      padding: 0.5em 1em;
+      min-width: 110px;
     }
   }
 
@@ -122,6 +142,24 @@
     &-row {
       &:nth-child(even) {
         background: $lightBlue;
+      }
+    }
+    &-cell {
+      &._muted {
+        position: relative;
+        z-index: 0;
+
+        &:after {
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: $white-secondary;
+          opacity: 0.6;
+          z-index: -1;
+        }
       }
     }
   }

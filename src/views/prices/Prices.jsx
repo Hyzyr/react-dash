@@ -304,7 +304,7 @@ const Prices = () => {
   });
   const { t, i18n } = useTranslation();
   const columnsData = React.useMemo(() => {
-    const tableTitles = t("products.tableHeaders", { returnObjects: true });
+    const tableTitles = t("prices.tableHeaders", { returnObjects: true });
 
     return columns.map((item, index) => ({
       ...item,

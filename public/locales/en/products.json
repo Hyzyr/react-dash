@@ -1,0 +1,69 @@
+{
+  "tableHeaders": {
+    "brand": {
+      "nameShort": "Brand",
+      "name": "Brand"
+    },
+    "item": {
+      "nameShort": "Item",
+      "name": "Item"
+    },
+    "supplierCode": {
+      "nameShort": "Sup. Code",
+      "name": "Supplier Code"
+    },
+    "size": {
+      "nameShort": "Size",
+      "name": "Size"
+    },
+    "retailPrice": {
+      "nameShort": "Retail pr.",
+      "name": "Retail Price"
+    },
+    "costPrice": {
+      "nameShort": "Cost",
+      "name": "Cost price"
+    },
+    "conversion": {
+      "nameShort": "Conversion",
+      "name": "Conversion"
+    },
+    "salesModel": {
+      "nameShort": "Sales Model",
+      "name": "Sales Model"
+    },
+    "stock": {
+      "nameShort": "Stock",
+      "name": "Stock"
+    },
+    "margin": {
+      "nameShort": "Margin",
+      "name": "Margin"
+    },
+    "stdDiscount": {
+      "nameShort": "STD Discount",
+      "name": "STD Discount"
+    },
+    "activity": {
+      "nameShort": "Activity",
+      "name": "Activity"
+    }
+  },
+  "loadGoods": "load goods",
+  "templateGoods": "template goods",
+  "loadAdditionalInfo": "load add. info",
+  "additionalInfoTemplate": "add. info template",
+  "popups": {
+    "apiKey": "api key",
+    "enterApi": "enter api",
+    "uploadExcelFile": "upload excel file",
+    "submitApi": "submit api",
+    "deleteItems": "REMOVE PRODUCTS FROM CALCULATION",
+    "deleteItemsConfirm": "You are about to activate these SKUs:",
+    "addItems": "Add GOODS to CALCULATION",
+    "addItemsConfirm": "You are about to activate these SKUs:",
+    "deactivateDuration": "For how long will we deactivate?",
+    "forever": "Forever",
+    "forPeriod": "For a certain period"
+  }
+}
